@@ -277,7 +277,7 @@ img {
 @media (max-width: 767.98px) {
 
     .astra-navbar {
-        flex-direction: column;
+
         gap: 20px;
     }
 
