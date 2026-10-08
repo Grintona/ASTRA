@@ -9,25 +9,59 @@
 </head>
 <body >
 <header>
-        <nav class="astra-navbar">
+            <nav class="navbar navbar-expand-md astra-navbar" aria-label="Main navigation">
 
-            <a href="index.html" class="logo">
-                ASTRA
+    <a href="index.html" class="navbar-brand logo">
+        ASTRA
+    </a>
+
+    <!-- Burger button -->
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainMenu"
+        aria-controls="mainMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation -->
+    <div class="collapse navbar-collapse" id="mainMenu">
+
+        <div class="navbar-nav ms-auto">
+
+            <a class="nav-link" href="index.html">
+                Home
             </a>
 
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="destinations.html">Destinations</a>
-                <a href="missions.html">Missions</a>
-                <a href="technology.html">Technology</a>
-                <a href="about.html">About</a>
+            <a class="nav-link" href="destinations.html">
+                Destinations
+            </a>
 
-                <a href="booking.html" class="astra-btn">
-                    Book a Journey
-                </a>
-            </div>
+            <a class="nav-link" href="missions.html">
+                Missions
+            </a>
 
-        </nav>
+            <a class="nav-link" href="technology.html">
+                Technology
+            </a>
+
+            <a class="nav-link" href="about.html" aria-current="page">
+                About
+            </a>
+
+            <a href="booking.html" class="astra-btn nav-link">
+                Book a Journey
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>   
     </header>
 <main class="container">
     <section class="page-heading">

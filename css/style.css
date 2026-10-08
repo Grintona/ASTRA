@@ -493,3 +493,19 @@ button:focus {
     outline: 2px solid #38bdf8;
     outline-offset: 3px;
 }
+
+.astra-navbar a {
+    color: white !important;
+}
+
+.astra-navbar a:hover {
+    color: #38bdf8 !important;
+}
+
+.astra-navbar .logo {
+    color: white !important;
+}
+
+.astra-navbar .nav-links a[aria-current="page"] {
+    color: #38bdf8 !important;
+}
