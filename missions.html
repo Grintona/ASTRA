@@ -51,6 +51,40 @@
             </p>
             <a href="booking.html" class="astra-btn">Book an Open Mission →</a>
         </section>
+         <section class="astra-section pt-0" id="radar" aria-labelledby="radarHeading">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <div>
+                    <h2 id="radarHeading">Live Mission Radar</h2>
+                    <p class="small text-secondary mb-0">Planets orbit in real time, ASTRA ships fly on the launch windows of the schedule below. Click anything to inspect it.</p>
+                </div>
+                <span class="hero-badge">✦ Interactive Solar System</span>
+            </div>
+
+            <div class="radar-layout">
+                <div class="radar-stage">
+                    <div class="radar-hud">
+                        <span class="radar-date" id="radarDate" aria-label="Simulation date">01 Dec 2029</span>
+                        <span class="radar-next" id="radarNext" aria-live="off"></span>
+                    </div>
+
+                    <canvas id="radarCanvas" role="img" aria-label="Interactive map of the Solar System showing planets and ASTRA ships. Use the lists below the map to select objects with the keyboard."></canvas>
+
+                    <div class="radar-controls">
+                        <button type="button" class="astra-btn-outline astra-btn-sm" id="radarPlay" aria-pressed="true">❚❚ Pause</button>
+                        <div class="filter-pills" id="radarSpeed" role="group" aria-label="Simulation speed"></div>
+                        <button type="button" class="astra-btn-outline astra-btn-sm" id="radarReset">↺ Restart</button>
+                    </div>
+                    <label class="radar-slider-label" for="radarTimeline">Timeline: <span id="radarWindow"></span></label>
+                    <input type="range" id="radarTimeline" class="radar-slider" min="0" max="1096" step="1" value="0">
+
+                    <div class="radar-chip-group" id="radarBodyChips" role="group" aria-label="Select a planet, moon or station"></div>
+                    <div class="radar-chip-group" id="radarShipChips" role="group" aria-label="Select a mission ship"></div>
+                    <p class="radar-note">Orbit periods of moons and flight times are stylised so that every voyage stays visible on one timeline. Signal delay and distances use real orbit data.</p>
+                </div>
+
+                <aside class="astra-card radar-panel" id="radarPanel" aria-live="polite" aria-label="Selected object telemetry"></aside>
+            </div>
+        </section>
 
         <section class="astra-section pt-0">
             <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
@@ -271,5 +305,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/missions.js"></script>
+    <script src="js/radar.js"></script>
+
 </body>
 </html>

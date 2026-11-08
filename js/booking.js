@@ -3,7 +3,9 @@ const DESTINATION_RATES = {
     "mars": { name: "Mars — Olympus Mons", baseFare: 2400000, duration: "180 Earth Days", minDate: "2030-09-10" },
     "europa": { name: "Europa — Sub-Oceanic Lab", baseFare: 8700000, duration: "2 Years", minDate: "2031-03-20" },
     "titan": { name: "Titan — Methane Dunes", baseFare: 12500000, duration: "3 Years", minDate: "2031-10-01" },
-    "orbital-spa": { name: "ASTRA Orbital Sanctuary", baseFare: 18500, duration: "3 Earth Days", minDate: "2030-01-15" }
+    "orbital-spa": { name: "ASTRA Orbital Sanctuary", baseFare: 18500, duration: "3 Earth Days", minDate: "2030-01-15" },
+    "venus-cloud": { name: "Venus — Aphrodite Cloud City", baseFare: 3100000, duration: "120 Earth Days", minDate: "2030-11-05" }
+
 };
 
 const CLASS_MULTIPLIERS = {
