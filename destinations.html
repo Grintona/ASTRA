@@ -3,306 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ASTRA - Destinations</title>
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
+    <title>Destinations | ASTRA Space Travel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
     <link rel="icon" type="image/jpeg" href="images/Logo.jpg">
 </head>
-
 <body>
 
-    <!-- HEADER -->
-    <header>
-           <nav class="navbar navbar-expand-md astra-navbar" aria-label="Main navigation">
+    <!-- HEADER / NAVIGATION -->
+    <header class="astra-header">
+        <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="navbar-brand logo">
+                    ASTRA <span class="logo-dot"></span>
+                </a>
 
-    <a href="index.html" class="navbar-brand logo">
-        ASTRA
-    </a>
+                <!-- Burger button -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainMenu"
+                    aria-controls="mainMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- Burger button -->
-    <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainMenu"
-        aria-controls="mainMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-    >
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navigation -->
-    <div class="collapse navbar-collapse" id="mainMenu">
-
-        <div class="navbar-nav ms-auto">
-
-            <a class="nav-link" href="index.html">
-                Home
-            </a>
-
-            <a class="nav-link" href="destinations.html">
-                Destinations
-            </a>
-
-            <a class="nav-link" href="missions.html">
-                Missions
-            </a>
-
-            <a class="nav-link" href="technology.html">
-                Technology
-            </a>
-
-            <a class="nav-link" href="about.html" aria-current="page">
-                About
-            </a>
-
-            <a href="booking.html" class="astra-btn nav-link">
-                Book a Journey
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>   
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <div class="navbar-nav ms-auto align-items-md-center">
+                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link active" href="destinations.html" aria-current="page">Destinations</a>
+                        <a class="nav-link" href="missions.html">Missions</a>
+                        <a class="nav-link" href="technology.html">Technology</a>
+                        <a class="nav-link" href="about.html">About</a>
+                        <a href="booking.html" class="nav-cta-btn">Book a Journey</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
-
 
     <!-- MAIN -->
     <main>
 
-        <!-- PAGE HEADER -->
+        <!-- PAGE HERO -->
         <section class="astra-hero">
-
             <div class="container">
-
-                <h1>
-                    DESTINATIONS
-                </h1>
-
+                <span class="hero-badge">✦ Interactive Expedition Catalog</span>
+                <h1>DISCOVER DESTINATIONS</h1>
                 <p>
-                    Choose your next destination beyond Earth.
+                    Filter through civilian orbits, planetary surface outposts, and deep-space scientific frontiers.
+                    All itineraries are rendered dynamically with live pricing and mission requirements.
                 </p>
-
             </div>
-
         </section>
 
-
-        <!-- DESTINATIONS -->
-        <section class="astra-section">
-
+        <!-- CATALOG TOOLBAR & DYNAMIC CONTAINER -->
+        <section class="astra-section pt-0">
             <div class="container">
 
-                <div class="row g-4">
-
-                    <!-- MOON -->
-                    <div class="col-12 col-md-4">
-
-                        <div class="astra-card">
-
-                            <img
-                                src="images/Moon.jpg"
-                                class="img-fluid"
-                                alt="The Moon"
+                <!-- TOOLBAR (Search, Filter Pills, Sort) -->
+                <div class="catalog-toolbar">
+                    <div class="row g-3 align-items-center">
+                        <!-- Live Search Input -->
+                        <div class="col-12 col-md-5">
+                            <label for="destinationSearch" class="visually-hidden">Search destinations</label>
+                            <input
+                                type="search"
+                                id="destinationSearch"
+                                class="form-control"
+                                placeholder="🔍 Search by destination, keyword, or difficulty..."
+                                autocomplete="off"
                             >
-
-                            <h3>Moon</h3>
-
-                            <p>
-                                Our closest destination beyond Earth.
-                                Enjoy a seven-day journey around the Moon.
-                            </p>
-
-                            <p>
-                                <strong>Duration:</strong> 7 days
-                            </p>
-
-                            <p>
-                                <strong>Price:</strong> $49,000
-                            </p>
-
-                            <a href="booking.html" class="astra-btn">
-                                Book Journey
-                            </a>
-
                         </div>
 
-                    </div>
-
-
-                    <!-- MARS -->
-                    <div class="col-12 col-md-4">
-
-                        <div class="astra-card">
-
-                            <img
-                                src="images/Mars.jpg"
-                                class="img-fluid"
-                                alt="Mars"
-                            >
-
-                            <h3>Mars</h3>
-
-                            <p>
-                                Travel to the Red Planet and experience
-                                a completely different world.
-                            </p>
-
-                            <p>
-                                <strong>Duration:</strong> 180 days
-                            </p>
-
-                            <p>
-                                <strong>Price:</strong> $2.4M
-                            </p>
-
-                            <a href="booking.html" class="astra-btn">
-                                Book Journey
-                            </a>
-
+                        <!-- Category Filters -->
+                        <div class="col-12 col-md-4">
+                            <div class="filter-pills" role="group" aria-label="Filter by destination category">
+                                <button type="button" class="filter-pill active" data-category="all">All</button>
+                                <button type="button" class="filter-pill" data-category="orbital">Orbital</button>
+                                <button type="button" class="filter-pill" data-category="interplanetary">Interplanetary</button>
+                                <button type="button" class="filter-pill" data-category="deep-space">Deep Space</button>
+                            </div>
                         </div>
 
-                    </div>
-
-
-                    <!-- EUROPA -->
-                    <div class="col-12 col-md-4">
-
-                        <div class="astra-card">
-
-                            <img
-                                src="images/Europa.jpg"
-                                class="img-fluid"
-                                alt="Europa"
-                            >
-
-                            <h3>Europa</h3>
-
-                            <p>
-                                Discover Jupiter's icy moon and
-                                its mysterious environment.
-                            </p>
-
-                            <p>
-                                <strong>Duration:</strong> 2 years
-                            </p>
-
-                            <p>
-                                <strong>Price:</strong> $8.7M
-                            </p>
-
-                            <a href="booking.html" class="astra-btn">
-                                Book Journey
-                            </a>
-
+                        <!-- Sort Dropdown -->
+                        <div class="col-12 col-md-3">
+                            <label for="sortSelect" class="visually-hidden">Sort destinations</label>
+                            <select id="sortSelect" class="form-select">
+                                <option value="featured">Sort: Featured</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="duration-asc">Duration: Shortest</option>
+                                <option value="rating-desc">Rating: Highest</option>
+                            </select>
                         </div>
-
                     </div>
 
+                    <!-- Calculated Statistics Bar -->
+                    <div class="catalog-stats mt-3">
+                        <div>
+                            Showing <span id="shownCount" class="stat-highlight">8</span> of <span id="totalCount" class="stat-highlight">8</span> expeditions
+                        </div>
+                        <div>
+                            Average Expedition Base Fare: <span id="avgPrice" class="stat-highlight">$3.2M</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DYNAMIC CARDS CONTAINER (Manipulated via JS) -->
+                <div id="destinationsContainer" class="row g-4" aria-live="polite">
+                    <!-- Cards will be populated by js/destinations.js -->
                 </div>
 
             </div>
-
         </section>
 
-
-        <!-- EXPERIENCE -->
+        <!-- TRAVEL EXPERIENCE OVERVIEW -->
         <section class="astra-section">
-
             <div class="container">
-
-                <h2>Choose Your Experience</h2>
-
+                <h2>Choose Your Experience Tier</h2>
                 <div class="grid grid-3">
-
                     <div class="astra-card">
-
-                        <h3>Orbital View</h3>
-
-                        <p>
-                            Observe Earth and the stars from
-                            the comfort of your spacecraft.
-                        </p>
-
+                        <h3>Explorer Class</h3>
+                        <p>Essential luxury spaceflight. Shared observation cupola access, standard sleeping pod, and complete zero-g orientation course.</p>
                     </div>
 
-
                     <div class="astra-card">
-
-                        <h3>Deep Space</h3>
-
-                        <p>
-                            Travel farther from Earth and
-                            experience deep space exploration.
-                        </p>
-
+                        <h3>Voyager Class</h3>
+                        <p>Extended private suites, enhanced personal telemetry monitors, priority EVA spacesuit spacewalk reservation, and gourmet dining.</p>
                     </div>
 
-
                     <div class="astra-card">
-
-                        <h3>Planetary Discovery</h3>
-
-                        <p>
-                            Visit another world and discover
-                            environments beyond Earth.
-                        </p>
-
+                        <h3>Galactic First</h3>
+                        <p>The pinnacle of space travel. 360-degree panoramic private stateroom, dedicated mission specialist steward, and custom planetary landing excursions.</p>
                     </div>
-
                 </div>
-
             </div>
-
-        </section>
-
-
-        <!-- CTA -->
-        <section class="astra-section">
-
-            <div class="container text-center">
-
-                <h2>
-                    Choose your destination
-                </h2>
-
-                <p>
-                    Your journey beyond Earth starts here.
-                </p>
-
-                <a href="booking.html" class="astra-btn">
-                    Book a Journey
-                </a>
-
-            </div>
-
         </section>
 
     </main>
 
+    <!-- QUICK VIEW LIGHTBOX MODAL (jQuery Feature) -->
+    <div class="astra-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="astra-modal-box">
+            <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="row g-3">
+                <div class="col-12 col-md-5">
+                    <img id="modalImage" src="images/Moon.jpg" class="img-fluid rounded" alt="Destination preview" style="height: 180px; width: 100%; object-fit: cover;">
+                    <div class="mt-3 p-2 rounded" style="background: rgba(7, 10, 19, 0.7); font-size: 13px;">
+                        <div><strong>Duration:</strong> <span id="modalDuration">7 Earth Days</span></div>
+                        <div><strong>Distance:</strong> <span id="modalDistance">384,400 km</span></div>
+                        <div><strong>Difficulty:</strong> <span id="modalDifficulty">Beginner</span></div>
+                        <div><strong>Rating:</strong> <span id="modalRating">4.9 / 5.0</span></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-7">
+                    <h3 id="modalTitle" class="h4 mb-2">Moon Base Shackleton</h3>
+                    <div class="h5 text-info mb-3" id="modalPrice">$49,000</div>
+                    <p id="modalDesc" class="small text-secondary mb-3"></p>
+                    <div class="small fw-bold text-white mb-2">Itinerary Highlights:</div>
+                    <ul id="modalFeatures" class="small text-secondary mb-4 ps-3"></ul>
+                    <a id="modalBookLink" href="booking.html" class="astra-btn astra-btn-sm w-100">Proceed to Booking Configurator →</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="astra-footer">
-
-        <p>
-            © 2026 ASTRA Space Travel
-        </p>
-
+        <div class="container">
+            <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
+            <p class="small text-secondary mb-0">Built with HTML5, CSS3, Bootstrap 5.3 and jQuery 3.7.1.</p>
+        </div>
     </footer>
 
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
-
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/destinations.js"></script>
 </body>
 </html>

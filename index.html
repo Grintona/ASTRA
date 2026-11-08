@@ -3,299 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ASTRA - Space Travel</title>
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
+    <title>ASTRA - Space Travel Agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
     <link rel="icon" type="image/jpeg" href="images/Logo.jpg">
 </head>
-
 <body>
 
-    <!-- HEADER -->
-    <header>
-           <nav class="navbar navbar-expand-md astra-navbar" aria-label="Main navigation">
+    <!-- HEADER / NAVIGATION (Fixed Burger Menu & Dark Theme) -->
+    <header class="astra-header">
+        <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="navbar-brand logo">
+                    ASTRA <span class="logo-dot"></span>
+                </a>
 
-    <a href="index.html" class="navbar-brand logo">
-        ASTRA
-    </a>
+                <!-- Burger button with custom high-contrast SVG and focus outline -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainMenu"
+                    aria-controls="mainMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- Burger button -->
-    <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainMenu"
-        aria-controls="mainMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-    >
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navigation -->
-    <div class="collapse navbar-collapse" id="mainMenu">
-
-        <div class="navbar-nav ms-auto">
-
-            <a class="nav-link" href="index.html">
-                Home
-            </a>
-
-            <a class="nav-link" href="destinations.html">
-                Destinations
-            </a>
-
-            <a class="nav-link" href="missions.html">
-                Missions
-            </a>
-
-            <a class="nav-link" href="technology.html">
-                Technology
-            </a>
-
-            <a class="nav-link" href="about.html" aria-current="page">
-                About
-            </a>
-
-            <a href="booking.html" class="astra-btn nav-link">
-                Book a Journey
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>   
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <div class="navbar-nav ms-auto align-items-md-center">
+                        <a class="nav-link active" href="index.html" aria-current="page">Home</a>
+                        <a class="nav-link" href="destinations.html">Destinations</a>
+                        <a class="nav-link" href="missions.html">Missions</a>
+                        <a class="nav-link" href="technology.html">Technology</a>
+                        <a class="nav-link" href="about.html">About</a>
+                        <a href="booking.html" class="nav-cta-btn">Book a Journey</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
 
-
-    <!-- MAIN -->
+    <!-- MAIN CONTENT -->
     <main>
 
-        <!-- HERO -->
+        <!-- HERO SECTION -->
         <section class="astra-hero">
-
             <div class="container">
-
+                <span class="hero-badge">✦ Pioneer Civilian Spaceflight</span>
                 <h1>
                     YOUR JOURNEY
                     <br>
                     BEYOND EARTH
                 </h1>
-
                 <p>
-                    Discover a new era of space travel.
-                    Explore the Moon, Mars and Europa with ASTRA.
+                    Experience the next chapter of human exploration.
+                    Comfortable, reliable, and awe-inspiring commercial voyages to the Moon, Mars, and the outer solar system.
                 </p>
+
+                <div class="d-flex justify-content-center gap-3 mb-4">
+                    <a href="destinations.html" class="astra-btn">
+                        Explore Destinations →
+                    </a>
+                    <a href="booking.html" class="astra-btn-outline">
+                        Configure Trip
+                    </a>
+                </div>
 
                 <img
                     src="images/hero.jpg"
                     class="hero-image"
-                    alt="ASTRA spacecraft traveling through space"
+                    alt="ASTRA deep-space exploration vessel orbiting above a vibrant celestial body"
                 >
 
-                <a href="destinations.html" class="astra-btn">
-                    Explore Destinations
-                </a>
-
+                <!-- SIGNATURE FEATURE: LIVE LAUNCH COUNTDOWN WIDGET -->
+                <div class="countdown-widget" aria-label="Next Mission Launch Timer">
+                    <div class="countdown-title">Next Scheduled Departure &bull; Lunar Horizon IV</div>
+                    <div class="countdown-grid">
+                        <div class="countdown-box">
+                            <span id="countdownDays" class="countdown-number">42</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="countdownHours" class="countdown-number">14</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="countdownMins" class="countdown-number">28</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="countdownSecs" class="countdown-number">55</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </section>
 
+        <!-- STATS COUNTER -->
+        <section class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="1420" data-suffix="+">1420+</span>
+                    <p class="stat-text">Civilian Astronauts Trained &amp; Flown</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="99.8" data-suffix="%">99.8%</span>
+                    <p class="stat-text">Mission Safety &amp; Success Record</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="3" data-suffix=" Stations">3 Stations</span>
+                    <p class="stat-text">Planetary Bases &amp; Orbiters</p>
+                </div>
+            </div>
+        </section>
 
         <!-- WHY ASTRA -->
         <section class="astra-section">
-
             <div class="container">
-
-                <h2>Why ASTRA?</h2>
-
+                <h2>Why Choose ASTRA?</h2>
                 <div class="grid grid-3">
-
-                    <div class="astra-card">
-
-                        <h3>Luxury</h3>
-
+                    <article class="astra-card">
+                        <div class="card-img-wrapper">
+                            <img src="images/why-comfort.jpg" alt="Luxury orbital cabin interior" style="height: 190px; object-fit: cover;">
+                        </div>
+                        <h3>Orbital Comfort</h3>
                         <p>
-                            Experience comfortable and carefully
-                            designed journeys beyond Earth.
+                            Designed around private panoramic suites, artificial gravity recreation zones, and zero-gravity fine dining.
                         </p>
+                    </article>
 
-                    </div>
-
-
-                    <div class="astra-card">
-
-                        <h3>Technology</h3>
-
+                    <article class="astra-card">
+                        <div class="card-img-wrapper">
+                            <img src="images/why-safety.jpg" alt="LIFECORE bioregenerative life support lab" style="height: 190px; object-fit: cover;">
+                        </div>
+                        <h3>LIFECORE Safety</h3>
                         <p>
-                            Travel using advanced spacecraft
-                            and modern space technology.
+                            Redundant oxygen recycling and closed-loop bio-filtration proven across millions of interplanetary kilometers.
                         </p>
+                    </article>
 
-                    </div>
-
-
-                    <div class="astra-card">
-
-                        <h3>Adventure</h3>
-
+                    <article class="astra-card">
+                        <div class="card-img-wrapper">
+                            <img src="images/why-navigation.jpg" alt="NAVIGATE-AI holographic flight bridge" style="height: 190px; object-fit: cover;">
+                        </div>
+                        <h3>Autonomous Navigation</h3>
                         <p>
-                            Visit destinations that were once
-                            impossible to reach.
+                            Real-time cosmic-ray shielding and AI-calculated gravitational sling maneuvers guarantee smooth transit.
                         </p>
-
-                    </div>
-
+                    </article>
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- DESTINATIONS -->
+        <!-- FEATURED DESTINATIONS PREVIEW -->
         <section class="astra-section">
-
             <div class="container">
-
-                <h2>Featured Destinations</h2>
+                <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-2">
+                    <div>
+                        <h2>Featured Destinations</h2>
+                        <p class="mb-0">Selected voyages opening for civilian reservations in 2030–2031.</p>
+                    </div>
+                    <a href="destinations.html" class="astra-btn-outline astra-btn-sm">
+                        View All Expeditions →
+                    </a>
+                </div>
 
                 <div class="row g-4">
-
                     <!-- MOON -->
                     <div class="col-12 col-md-4">
-
-                        <div class="astra-card">
-
-
-                            <h3>Moon</h3>
-
-                            <p>
-                                A seven-day journey to Earth's
-                                closest celestial neighbor.
+                        <article class="astra-card h-100 d-flex flex-column">
+                            <div class="card-img-wrapper">
+                                <img src="images/Moon.jpg" class="img-fluid" alt="The Moon with cratered surface" style="height: 220px;">
+                            </div>
+                            <span class="status-badge open">Popular &bull; Open</span>
+                            <h3>Moon Base Shackleton</h3>
+                            <p class="flex-grow-1">
+                                Our closest celestial destination. Enjoy low-gravity walks and observe Earth rising over crater rims.
                             </p>
-
-                            <p>
-                                From $49,000
+                            <p class="mb-3">
+                                <strong>Duration:</strong> 7 days &bull; <strong>Price:</strong> From $49,000
                             </p>
-
-                            <a
-                                href="destinations.html"
-                                class="astra-btn"
-                            >
-                                Discover
-                            </a>
-
-                        </div>
-
+                            <a href="booking.html" class="astra-btn w-100">Book Journey</a>
+                        </article>
                     </div>
-
 
                     <!-- MARS -->
                     <div class="col-12 col-md-4">
-
-                        <div class="astra-card">
-
-
-                            <h3>Mars</h3>
-
-                            <p>
-                                An extraordinary journey to the
-                                Red Planet.
+                        <article class="astra-card h-100 d-flex flex-column">
+                            <div class="card-img-wrapper">
+                                <img src="images/Mars.jpg" class="img-fluid" alt="Red planet Mars showing Olympus Mons" style="height: 220px;">
+                            </div>
+                            <span class="status-badge limited">Limited Berths</span>
+                            <h3>Olympus Mons Outpost</h3>
+                            <p class="flex-grow-1">
+                                An extraordinary expedition to the Red Planet. Explore ancient riverbeds and dormant Martian volcanoes.
                             </p>
-
-                            <p>
-                                From $2.4M
+                            <p class="mb-3">
+                                <strong>Duration:</strong> 180 days &bull; <strong>Price:</strong> From $2.4M
                             </p>
-
-                            <a
-                                href="destinations.html"
-                                class="astra-btn"
-                            >
-                                Discover
-                            </a>
-
-                        </div>
-
+                            <a href="booking.html" class="astra-btn w-100">Book Journey</a>
+                        </article>
                     </div>
-
 
                     <!-- EUROPA -->
                     <div class="col-12 col-md-4">
-
-                        <div class="astra-card">
-
-
-                            <h3>Europa</h3>
-
-                            <p>
-                                Explore one of Jupiter's most
-                                fascinating moons.
+                        <article class="astra-card h-100 d-flex flex-column">
+                            <div class="card-img-wrapper">
+                                <img src="images/Europa.jpg" class="img-fluid" alt="Icy surface of Jupiter's moon Europa" style="height: 220px;">
+                            </div>
+                            <span class="status-badge planned">Planned Expedition</span>
+                            <h3>Europa Deep Sub-Ice</h3>
+                            <p class="flex-grow-1">
+                                Discover Jupiter's icy moon and witness warm sub-surface oceans through submersible domes.
                             </p>
-
-                            <p>
-                                From $8.7M
+                            <p class="mb-3">
+                                <strong>Duration:</strong> 2 years &bull; <strong>Price:</strong> From $8.7M
                             </p>
-
-                            <a
-                                href="destinations.html"
-                                class="astra-btn"
-                            >
-                                Discover
-                            </a>
-
-                        </div>
-
+                            <a href="booking.html" class="astra-btn w-100">Book Journey</a>
+                        </article>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- CTA -->
-        <section class="astra-section">
-
-            <div class="container text-center">
-
-                <h2>Ready to go beyond?</h2>
-
-                <p>
-                    Choose your destination and begin
-                    planning your journey.
-                </p>
-
-                <a href="booking.html" class="astra-btn">
-                    Book a Journey
-                </a>
-
+        <!-- CTA SECTION -->
+        <section class="astra-section text-center">
+            <div class="container">
+                <div class="astra-card p-5" style="background: linear-gradient(135deg, rgba(16,21,34,0.95) 0%, rgba(124,92,255,0.15) 100%);">
+                    <h2>Ready to Go Beyond the Atmosphere?</h2>
+                    <p style="max-width: 600px; margin: 0 auto 28px;">
+                        Customize your space flight parameters, select seating class, and compute an immediate estimate with our Space Travel Configurator.
+                    </p>
+                    <a href="booking.html" class="astra-btn">
+                        Start Booking Configurator →
+                    </a>
+                </div>
             </div>
-
         </section>
 
     </main>
 
-
     <!-- FOOTER -->
     <footer class="astra-footer">
-
-        <p>
-            © 2026 ASTRA Space Travel
-        </p>
-
+        <div class="container">
+            <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
+            <p class="small text-secondary mb-0">Built with HTML5, CSS3, Bootstrap 5.3 and jQuery 3.7.1. All missions and spacecraft concepts are fictional.</p>
+        </div>
     </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Bootstrap and jQuery Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
