@@ -1,7 +1,4 @@
-/* ==========================================================================
-   ASTRA Space Travel - Comprehensive Sci-Fi Design System
-   Front End Endterm Project | Astana IT University
-   ========================================================================== */
+
 
 :root {
     --bg-deep-space: #070a13;
@@ -24,7 +21,7 @@
     --danger-color: #f43f5e;
 }
 
-/* GENERAL RESETS & TYPOGRAPHY */
+
 * {
     box-sizing: border-box;
 }
@@ -88,7 +85,7 @@ h3 {
     font-size: 1.35rem;
 }
 
-/* ACCESSIBILITY FOCUS OUTLINE */
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -102,16 +99,14 @@ textarea:focus-visible,
     box-shadow: 0 0 12px rgba(56, 189, 248, 0.4) !important;
 }
 
-/* CONTAINER */
+
 .container {
     width: 92%;
     max-width: 1240px;
     margin: 0 auto;
 }
 
-/* ==========================================================================
-   NAVBAR & BURGER MENU (Fixes Midterm Remark)
-   ========================================================================== */
+
 .astra-header {
     background: rgba(7, 10, 19, 0.85);
     backdrop-filter: blur(14px);
@@ -147,7 +142,7 @@ textarea:focus-visible,
     box-shadow: 0 0 10px var(--accent-cyan);
 }
 
-/* Custom styled burger button - Highly visible on dark backgrounds */
+
 .navbar-toggler {
     border: 1.5px solid rgba(124, 92, 255, 0.45) !important;
     background: rgba(16, 21, 34, 0.85) !important;
@@ -161,7 +156,7 @@ textarea:focus-visible,
     border-color: var(--accent-cyan) !important;
 }
 
-/* Crisp high-contrast white & cyan burger icon */
+
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2338bdf8' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
     width: 1.4em;
@@ -182,7 +177,7 @@ textarea:focus-visible,
     background: rgba(56, 189, 248, 0.08);
 }
 
-/* Active navigation item styling */
+
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link[aria-current="page"] {
     color: #ffffff !important;
@@ -190,7 +185,7 @@ textarea:focus-visible,
     border-bottom: 2px solid var(--accent-cyan);
 }
 
-/* Call to Action Button in Nav */
+
 .nav-cta-btn {
     display: inline-block;
     padding: 8px 18px !important;
@@ -211,7 +206,7 @@ textarea:focus-visible,
     color: #ffffff !important;
 }
 
-/* Mobile Collapse Styling */
+
 @media (max-width: 767.98px) {
     .navbar-collapse {
         background: #0f1524;
@@ -240,9 +235,7 @@ textarea:focus-visible,
     }
 }
 
-/* ==========================================================================
-   BUTTONS
-   ========================================================================== */
+
 .astra-btn,
 .btn-astra {
     display: inline-flex;
@@ -298,9 +291,7 @@ textarea:focus-visible,
     font-size: 13.5px;
 }
 
-/* ==========================================================================
-   CARDS & GRIDS (Deep Space Redesign)
-   ========================================================================== */
+
 .astra-card {
     background: var(--bg-card);
     backdrop-filter: blur(12px);
@@ -367,9 +358,7 @@ textarea:focus-visible,
     }
 }
 
-/* ==========================================================================
-   HERO SECTION
-   ========================================================================== */
+
 .astra-hero {
     padding: 80px 0 60px;
     text-align: center;
@@ -415,9 +404,7 @@ textarea:focus-visible,
     letter-spacing: 1px;
 }
 
-/* ==========================================================================
-   INTERACTIVE WIDGETS (Home Countdown & Counters)
-   ========================================================================== */
+
 .countdown-widget {
     background: rgba(16, 21, 34, 0.9);
     border: 1px solid rgba(56, 189, 248, 0.3);
@@ -498,9 +485,7 @@ textarea:focus-visible,
     margin: 0;
 }
 
-/* ==========================================================================
-   DESTINATIONS CATALOG CONTROLS (Search, Filter, Sort, Calc)
-   ========================================================================== */
+
 .catalog-toolbar {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -573,9 +558,7 @@ textarea:focus-visible,
     display: block;
 }
 
-/* ==========================================================================
-   STATUS BADGES
-   ========================================================================== */
+
 .status-badge {
     display: inline-block;
     padding: 4px 10px;
@@ -611,9 +594,7 @@ textarea:focus-visible,
     border: 1px solid rgba(124, 92, 255, 0.4);
 }
 
-/* ==========================================================================
-   FORMS & VALIDATION (Booking Configurator)
-   ========================================================================== */
+
 .form-label {
     color: #ffffff;
     font-weight: 500;
@@ -644,7 +625,7 @@ textarea:focus-visible,
     color: #64748b;
 }
 
-/* Validation Feedback States */
+
 .form-control.is-invalid,
 .form-select.is-invalid {
     border-color: var(--danger-color) !important;
@@ -669,7 +650,7 @@ textarea:focus-visible,
     border-color: var(--success-color) !important;
 }
 
-/* Custom Checkboxes */
+
 .form-check-input {
     background-color: #0c111e;
     border: 1.5px solid rgba(124, 92, 255, 0.4);
@@ -685,7 +666,7 @@ textarea:focus-visible,
     font-size: 14px;
 }
 
-/* Booking Layout */
+
 .booking-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -760,9 +741,7 @@ textarea:focus-visible,
     margin-bottom: 8px;
 }
 
-/* ==========================================================================
-   JQUERY FAQ ACCORDION (missions.html)
-   ========================================================================== */
+
 .faq-accordion {
     margin-top: 24px;
 }
@@ -809,9 +788,7 @@ textarea:focus-visible,
     border-top: 1px solid rgba(124, 92, 255, 0.1);
 }
 
-/* ==========================================================================
-   INTERACTIVE TECHNOLOGY TABS & MODAL (technology.html)
-   ========================================================================== */
+
 .tech-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -851,7 +828,7 @@ textarea:focus-visible,
     display: block;
 }
 
-/* Quick View Lightbox Modal (jQuery) */
+
 .astra-modal-overlay {
     display: none;
     position: fixed;
@@ -894,9 +871,7 @@ textarea:focus-visible,
     color: #ffffff;
 }
 
-/* ==========================================================================
-   SPACE READINESS QUIZ (about.html)
-   ========================================================================== */
+
 .quiz-container {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -958,9 +933,7 @@ textarea:focus-visible,
     margin-top: 24px;
 }
 
-/* ==========================================================================
-   BACK TO TOP BUTTON (jQuery Feature)
-   ========================================================================== */
+
 #backToTopBtn {
     display: none;
     position: fixed;
@@ -985,9 +958,7 @@ textarea:focus-visible,
     box-shadow: 0 8px 24px rgba(124, 92, 255, 0.7);
 }
 
-/* ==========================================================================
-   SECTIONS & FOOTER
-   ========================================================================== */
+
 .astra-section {
     padding: 60px 0;
 }
@@ -1010,7 +981,7 @@ textarea:focus-visible,
     color: var(--accent-cyan);
 }
 
-/* RESPONSIVE PADDING FIXES */
+
 @media (max-width: 575.98px) {
     .astra-hero {
         padding: 50px 0 40px;
@@ -1029,7 +1000,7 @@ textarea:focus-visible,
     }
 }
 
-/* Specific table styling overrides */
+
 .table-shell {
     width: 100%;
     overflow-x: auto;

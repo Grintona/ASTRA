@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- HEADER / NAVIGATION -->
+    
     <header class="astra-header">
         <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
             <div class="container">
@@ -18,7 +18,7 @@
                     ASTRA <span class="logo-dot"></span>
                 </a>
 
-                <!-- Burger button -->
+                
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -31,7 +31,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Navigation Links -->
+                
                 <div class="collapse navbar-collapse" id="mainMenu">
                     <div class="navbar-nav ms-auto align-items-md-center">
                         <a class="nav-link" href="index.html">Home</a>
@@ -46,10 +46,10 @@
         </nav>
     </header>
 
-    <!-- MAIN -->
+    
     <main>
 
-        <!-- PAGE HERO -->
+        
         <section class="astra-hero">
             <div class="container">
                 <span class="hero-badge">✦ Interactive Expedition Catalog</span>
@@ -61,14 +61,14 @@
             </div>
         </section>
 
-        <!-- CATALOG TOOLBAR & DYNAMIC CONTAINER -->
+        
         <section class="astra-section pt-0">
             <div class="container">
 
-                <!-- TOOLBAR (Search, Filter Pills, Sort) -->
+                
                 <div class="catalog-toolbar">
                     <div class="row g-3 align-items-center">
-                        <!-- Live Search Input -->
+                        
                         <div class="col-12 col-md-5">
                             <label for="destinationSearch" class="visually-hidden">Search destinations</label>
                             <input
@@ -80,7 +80,7 @@
                             >
                         </div>
 
-                        <!-- Category Filters -->
+                        
                         <div class="col-12 col-md-4">
                             <div class="filter-pills" role="group" aria-label="Filter by destination category">
                                 <button type="button" class="filter-pill active" data-category="all">All</button>
@@ -90,7 +90,7 @@
                             </div>
                         </div>
 
-                        <!-- Sort Dropdown -->
+                        
                         <div class="col-12 col-md-3">
                             <label for="sortSelect" class="visually-hidden">Sort destinations</label>
                             <select id="sortSelect" class="form-select">
@@ -103,7 +103,7 @@
                         </div>
                     </div>
 
-                    <!-- Calculated Statistics Bar -->
+                    
                     <div class="catalog-stats mt-3">
                         <div>
                             Showing <span id="shownCount" class="stat-highlight">8</span> of <span id="totalCount" class="stat-highlight">8</span> expeditions
@@ -114,15 +114,15 @@
                     </div>
                 </div>
 
-                <!-- DYNAMIC CARDS CONTAINER (Manipulated via JS) -->
+                
                 <div id="destinationsContainer" class="row g-4" aria-live="polite">
-                    <!-- Cards will be populated by js/destinations.js -->
+                    
                 </div>
 
             </div>
         </section>
 
-        <!-- TRAVEL EXPERIENCE OVERVIEW -->
+        
         <section class="astra-section">
             <div class="container">
                 <h2>Choose Your Experience Tier</h2>
@@ -147,7 +147,7 @@
 
     </main>
 
-    <!-- QUICK VIEW LIGHTBOX MODAL (jQuery Feature) -->
+    
     <div class="astra-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="astra-modal-box">
             <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
@@ -173,7 +173,7 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
+    
     <footer class="astra-footer">
         <div class="container">
             <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
@@ -181,7 +181,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>

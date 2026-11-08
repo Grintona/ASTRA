@@ -3,151 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technology | ASTRA</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <title>Spacecraft Technology | ASTRA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/jpeg" href="images/Logo.jpg">
 </head>
 <body>
-    <header>
-           <nav class="navbar navbar-expand-md astra-navbar" aria-label="Main navigation">
 
-    <a href="index.html" class="navbar-brand logo">
-        ASTRA
-    </a>
+    
+    <header class="astra-header">
+        <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="navbar-brand logo">
+                    ASTRA <span class="logo-dot"></span>
+                </a>
 
-    <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainMenu"
-        aria-controls="mainMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-    >
-        <span class="navbar-toggler-icon"></span>
-    </button>
+                
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainMenu"
+                    aria-controls="mainMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <div class="collapse navbar-collapse" id="mainMenu">
-
-        <div class="navbar-nav ms-auto">
-
-            <a class="nav-link" href="index.html">
-                Home
-            </a>
-
-            <a class="nav-link" href="destinations.html">
-                Destinations
-            </a>
-
-            <a class="nav-link" href="missions.html">
-                Missions
-            </a>
-
-            <a class="nav-link" href="technology.html">
-                Technology
-            </a>
-
-            <a class="nav-link" href="about.html" aria-current="page">
-                About
-            </a>
-
-            <a href="booking.html" class="astra-btn nav-link">
-                Book a Journey
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>   
+                
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <div class="navbar-nav ms-auto align-items-md-center">
+                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="destinations.html">Destinations</a>
+                        <a class="nav-link" href="missions.html">Missions</a>
+                        <a class="nav-link active" href="technology.html" aria-current="page">Technology</a>
+                        <a class="nav-link" href="about.html">About</a>
+                        <a href="booking.html" class="nav-cta-btn">Book a Journey</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
 
+    
     <main>
+        
         <section class="astra-hero">
             <div class="container">
-                <h1>Built for the journey</h1>
-                <p>Meet the spacecraft and systems behind ASTRA's vision of space travel.
-                    These are fictional concepts created for our student project.</p>
-                <a href="#systems" class="astra-btn">Explore our technology</a>
+                <span class="hero-badge">✦ Engineering &amp; Life Support</span>
+                <h1>BUILT FOR DEEP SPACE</h1>
+                <p>
+                    Inspect the propulsion, closed-loop environmental systems, and autonomous navigation arrays powering ASTRA's civilian fleet.
+                </p>
+                <a href="#systems" class="astra-btn">Inspect Subsystems ↓</a>
             </div>
         </section>
 
+        
         <section id="systems" class="astra-section">
             <div class="container">
-                <h2>Spacecraft and onboard systems</h2>
-                <div class="grid technology-grid">
-                    <article class="card astra-card">
-                        <figure>
-                            <img src="images/orion-x.svg" class="technology-diagram img-fluid"
-                                width="240" height="120" alt="ORION-X spacecraft with a cabin, solar panels and propulsion">
-                            <figcaption>Cabin, solar panels and propulsion</figcaption>
-                        </figure>
-                        <h3>ORION-X</h3>
-                        <p>Our spacecraft concept brings the crew, passenger cabins and flight systems
-                            together in one vehicle designed for journeys beyond Earth.</p>
-                        <ul>
-                            <li>Private cabins and a shared observation area</li>
-                            <li>Solar panels to support onboard power</li>
-                            <li>Separate crew and passenger spaces</li>
-                        </ul>
-                    </article>
-
-                    <article class="card astra-card">
-                        <figure>
-                            <img src="images/lifecore.svg" class="technology-diagram img-fluid"
-                                width="240" height="120" alt="LIFECORE air and water recycling loop">
-                            <figcaption>Air and water recycling loop</figcaption>
-                        </figure>
-                        <h3>LIFECORE</h3>
-                        <p>A life-support concept that manages the cabin environment so passengers
-                            can focus on the journey.</p>
-                        <ul>
-                            <li>Air filtration and oxygen monitoring</li>
-                            <li>Water recycling</li>
-                            <li>Cabin temperature control</li>
-                        </ul>
-                    </article>
-
-                    <article class="card astra-card">
-                        <figure>
-                            <img src="images/navigate-ai.svg" class="technology-diagram img-fluid"
-                                width="240" height="120" alt="NAVIGATE AI route between two destinations">
-                            <figcaption>Route planning between destinations</figcaption>
-                        </figure>
-                        <h3>NAVIGATE AI</h3>
-                        <p>A navigation assistant that helps the crew plan routes and track the
-                            spacecraft's position. The crew stays in control.</p>
-                        <ul>
-                            <li>Route planning and course updates</li>
-                            <li>Obstacle alerts for the crew</li>
-                            <li>Manual navigation backup</li>
-                        </ul>
-                    </article>
-
-                    <article class="card astra-card">
-                        <figure>
-                            <img src="images/astra-shield.svg" class="technology-diagram img-fluid"
-                                width="240" height="120" alt="ASTRA SHIELD protective layers around the cabin">
-                            <figcaption>Layered shielding around the cabin</figcaption>
-                        </figure>
-                        <h3>ASTRA SHIELD</h3>
-                        <p>A protection concept combining cabin shielding, radiation monitoring
-                            and a sheltered area for periods of increased solar activity.</p>
-                        <ul>
-                            <li>Layers around occupied spaces</li>
-                            <li>Radiation sensors and crew alerts</li>
-                            <li>A dedicated storm shelter</li>
-                        </ul>
-                    </article>
+                <div class="text-center mb-4">
+                    <h2>Spacecraft Subsystem Explorer</h2>
+                    <p class="small text-secondary">Click any subsystem tab to inspect live engineering telemetry and architectural schematics.</p>
                 </div>
-                <p class="mt-4">Discover the people and ideas behind these concepts on our <a class="astra-text-link" href="about.html">About page</a>.</p>
+
+                
+                <div class="tech-tabs" role="tablist" aria-label="Spacecraft subsystems">
+                    <button type="button" class="tech-tab-btn active" data-system="orion-x" id="tab-orion-x" role="tab" aria-controls="systemPanel" tabindex="0" aria-selected="true">ORION-X Capsule</button>
+                    <button type="button" class="tech-tab-btn" data-system="lifecore" id="tab-lifecore" tabindex="-1" aria-controls="systemPanel" role="tab" aria-selected="false">LIFECORE ECLSS</button>
+                    <button type="button" class="tech-tab-btn" data-system="navigate-ai" id="tab-navigate-ai" tabindex="-1" aria-controls="systemPanel" role="tab" aria-selected="false">NAVIGATE-AI Guidance</button>
+                    <button type="button" class="tech-tab-btn" data-system="astra-shield" id="tab-astra-shield" tabindex="-1" aria-controls="systemPanel" role="tab" aria-selected="false">ASTRA-SHIELD</button>
+                </div>
+
+                
+                <article id="systemPanel" role="tabpanel" aria-labelledby="tab-orion-x" class="astra-card p-4 p-md-5 mb-5" aria-live="polite">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-12 col-md-5 text-center">
+                            <div class="p-3 rounded" style="background: rgba(7, 10, 19, 0.7); border: 1px solid var(--border-color);">
+                                <img
+                                    id="systemSvg"
+                                    src="images/orion-x.svg"
+                                    class="img-fluid"
+                                    alt="ORION-X Exploration Vehicle Schematic"
+                                    style="height: 190px; width: auto; object-fit: contain;"
+                                >
+                            </div>
+                            <button type="button" id="inspectBlueprintBtn" class="astra-btn-outline astra-btn-sm w-100 mt-3">
+                                🔍 Enlarge Blueprint (jQuery Modal)
+                            </button>
+                        </div>
+
+                        <div class="col-12 col-md-7">
+                            <span class="hero-badge mb-2">ACTIVE SUBSYSTEM</span>
+                            <h3 id="systemTitle" class="h3 mb-1">ORION-X Exploration Vehicle</h3>
+                            <p id="systemTagline" class="text-info small fw-bold mb-3">Heavy Interplanetary Crew Capsule &amp; Observation Lounge</p>
+                            <p id="systemDescription" class="text-secondary small mb-4">
+                                The flagship carrier for lunar and near-Earth voyages. Features artificial micro-gravity rotation hubs, panoramic glass cupolas, and emergency escape launch thrusters capable of 12G abort maneuvers.
+                            </p>
+
+                            
+                            <div class="p-3 rounded" style="background: rgba(7, 10, 19, 0.5); border: 1px solid rgba(124, 92, 255, 0.2); font-size: 13.5px;">
+                                <div class="row g-2">
+                                    <div class="col-12 col-sm-6">
+                                        <span class="text-secondary">Main Propulsion:</span>
+                                        <div id="specThrust" class="fw-bold text-white">450 kN Dual-Mode Methane/LOX</div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <span class="text-secondary">Specific Impulse (Isp):</span>
+                                        <div id="specIsp" class="fw-bold text-white">385 seconds</div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <span class="text-secondary">Passenger / Crew Capacity:</span>
+                                        <div id="specCapacity" class="fw-bold text-white">6 Civilian Astronauts + 2 Crew</div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <span class="text-secondary">Radiation Defense:</span>
+                                        <div id="specShielding" class="fw-bold text-white">Multi-layered water wall &amp; magnetic deflectors</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                
+                <h2>Fleet Comparison Matrix</h2>
+                <div class="table-shell" tabindex="0" aria-label="Spacecraft fleet comparison">
+                    <table class="table mission-table align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Vessel Concept</th>
+                                <th scope="col">Operational Domain</th>
+                                <th scope="col">Passenger Berths</th>
+                                <th scope="col">Max Range</th>
+                                <th scope="col">Key Safety Feature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-white">ORION-X Mark II</th>
+                                <td>Earth Orbit &amp; Lunar Transit</td>
+                                <td>6 Berths</td>
+                                <td>1,000,000 km</td>
+                                <td>Instant Launch Abort Tower</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-white">TITAN-LANDER Express</th>
+                                <td>Mars &amp; Outer Planet Descent</td>
+                                <td>4 Berths</td>
+                                <td>500,000,000 km</td>
+                                <td>Ablative Hypersonic Heatshield</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-white">ORBITAL SANCTUARY</th>
+                                <td>Low Earth Orbit (420 km)</td>
+                                <td>16 Berths</td>
+                                <td>Low Earth Orbit</td>
+                                <td>Dual-Shield Whipple Micrometeorite Armor</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="astra-section text-center">
+            <div class="container">
+                <div class="astra-card p-5">
+                    <h2>Experience Space Engineering In Person</h2>
+                    <p style="max-width: 600px; margin: 0 auto 24px;">
+                        All ASTRA vessels are certified under universal commercial space safety guidelines.
+                    </p>
+                    <a href="booking.html" class="astra-btn">Configure Your Journey →</a>
+                </div>
             </div>
         </section>
     </main>
 
+    
+    <div id="blueprintModal" aria-hidden="true" class="astra-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="blueprintModalTitle">
+        <div class="astra-modal-box">
+            <button type="button" id="closeBlueprintModalBtn" class="modal-close-btn" aria-label="Close blueprint modal">&times;</button>
+            <h3 id="blueprintModalTitle" class="h4 mb-1 text-white">ORION-X Schematic</h3>
+            <p id="blueprintModalTagline" class="text-info small mb-3"></p>
+            <div class="p-4 rounded text-center mb-3" style="background: rgba(7, 10, 19, 0.9); border: 1px solid var(--border-color);">
+                <img id="blueprintModalSvg" src="images/orion-x.svg" class="img-fluid" alt="Subsystem blueprint" style="max-height: 240px;">
+            </div>
+            <p id="blueprintModalDesc" class="small text-secondary mb-0"></p>
+        </div>
+    </div>
+
+    
     <footer class="astra-footer">
-        <p>© 2026 ASTRA Space Travel</p>
+        <div class="container">
+            <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
+            <p class="small text-secondary mb-0">Built with HTML5, CSS3, Bootstrap 5.3 and jQuery 3.7.1.</p>
+        </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/technology.js"></script>
 </body>
 </html>

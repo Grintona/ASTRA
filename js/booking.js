@@ -59,8 +59,6 @@ function calculateLiveEstimate() {
     let passengers = parseInt($("#passengers").val(), 10);
     if (isNaN(passengers) || passengers < 1) passengers = 1;
     if (passengers > 6) passengers = 6;
-
-    // Calculate add-ons
     let addonsPerPerson = 0;
     if ($("#addonSpacewalk").is(":checked")) addonsPerPerson += ADDON_PRICES.spacewalk;
     if ($("#addonInsurance").is(":checked")) addonsPerPerson += ADDON_PRICES.insurance;
