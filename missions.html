@@ -3,195 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Missions | ASTRA</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <title>Missions Schedule | ASTRA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/jpeg" href="images/Logo.jpg">
 </head>
 <body>
-<header>
-            <nav class="navbar navbar-expand-md astra-navbar" aria-label="Main navigation">
 
-    <a href="index.html" class="navbar-brand logo">
-        ASTRA
-    </a>
+    <header class="astra-header">
+        <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="navbar-brand logo">
+                    ASTRA <span class="logo-dot"></span>
+                </a>
 
-    <!-- Burger button -->
-    <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainMenu"
-        aria-controls="mainMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-    >
-        <span class="navbar-toggler-icon"></span>
-    </button>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainMenu"
+                    aria-controls="mainMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- Navigation -->
-    <div class="collapse navbar-collapse" id="mainMenu">
-
-        <div class="navbar-nav ms-auto">
-
-            <a class="nav-link" href="index.html">
-                Home
-            </a>
-
-            <a class="nav-link" href="destinations.html">
-                Destinations
-            </a>
-
-            <a class="nav-link" href="missions.html">
-                Missions
-            </a>
-
-            <a class="nav-link" href="technology.html">
-                Technology
-            </a>
-
-            <a class="nav-link" href="about.html" aria-current="page">
-                About
-            </a>
-
-            <a href="booking.html" class="astra-btn nav-link">
-                Book a Journey
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>   
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <div class="navbar-nav ms-auto align-items-md-center">
+                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="destinations.html">Destinations</a>
+                        <a class="nav-link active" href="missions.html" aria-current="page">Missions</a>
+                        <a class="nav-link" href="technology.html">Technology</a>
+                        <a class="nav-link" href="about.html">About</a>
+                        <a href="booking.html" class="nav-cta-btn">Book a Journey</a>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
-<main class="container">
-    <section class="page-heading">
-        <p class="eyebrow">ASTRA MISSIONS</p>
-        <h1>Explore our space missions</h1>
-        <p>Compare destinations, prices and mission status before planning your journey.</p>
-        <a href="booking.html" class="btn">Book a Journey</a>
-    </section>
 
-    <section class="section">
-        <h2>Mission overview</h2>
-        <p>Base prices are shown in USD for one passenger in Explorer class.</p>
-        <p class="small">On small screens, scroll inside the table to see all columns.</p>
-        <div class="table-wrapper" tabindex="0" aria-label="Scrollable mission table">
-            <table class="table mission-table">
-                <caption>Fictional ASTRA mission schedule</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Mission</th>
-                        <th scope="col">Destination</th>
-                        <th scope="col">Duration</th>
-                        <th scope="col">Base price</th>
-                        <th scope="col">Departure</th>
-                        <th scope="col">Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Lunar Horizon</th>
-                        <td>Moon</td>
-                        <td>7 days</td>
-                        <td>$49,000</td>
-                        <td>15 June 2030</td>
-                        <td><span class="status open">Open</span></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Red Frontier</th>
-                        <td>Mars</td>
-                        <td>180 days</td>
-                        <td>$2.4M</td>
-                        <td>10 September 2030</td>
-                        <td><span class="status limited">Limited</span></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Europa Odyssey</th>
-                        <td>Europa</td>
-                        <td>2 years</td>
-                        <td>$8.7M</td>
-                        <td>20 March 2031</td>
-                        <td><span class="status planned">Planned</span></td>
-                    </tr>
-                </tbody>
-            </table>
+    <main class="container my-5">
+        <section class="page-heading text-center mb-5">
+            <span class="hero-badge">✦ Flight Directorate Manifest</span>
+            <h1>EXPEDITION MANIFEST &amp; FLIGHT SCHEDULE</h1>
+            <p style="max-width: 720px; margin: 0 auto 24px;">
+                Review active flight manifests, scheduled orbital launch windows, and crew capacities across all ASTRA missions.
+            </p>
+            <a href="booking.html" class="astra-btn">Book an Open Mission →</a>
+        </section>
+
+        <section class="astra-section pt-0">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <div>
+                    <h2>Flight Schedule</h2>
+                    <p class="small text-secondary mb-0">Base prices indicated for single civilian astronaut in Explorer stateroom.</p>
+                </div>
+
+                <div class="filter-pills" role="group" aria-label="Filter missions by launch status">
+                    <button type="button" class="filter-pill mission-filter-btn active" data-status="all">All Missions</button>
+                    <button type="button" class="filter-pill mission-filter-btn" data-status="open">Open</button>
+                    <button type="button" class="filter-pill mission-filter-btn" data-status="limited">Limited</button>
+                    <button type="button" class="filter-pill mission-filter-btn" data-status="planned">Planned</button>
+                </div>
+            </div>
+            <div class="table-shell" tabindex="0" aria-label="Scrollable mission schedule table">
+                <table class="table mission-table align-middle mb-0">
+                    <caption class="visually-hidden">Official ASTRA civilian mission launch schedule</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Mission Code</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Vessel</th>
+                            <th scope="col">Duration</th>
+                            <th scope="col">Base Fare</th>
+                            <th scope="col">Launch Window</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="missionTableBody">
+                        <tr data-status="open">
+                            <th scope="row" class="fw-bold text-white">ASTRA-LH01</th>
+                            <td>Moon (Shackleton)</td>
+                            <td>ORION-X Mark II</td>
+                            <td>7 Earth Days</td>
+                            <td>$49,000</td>
+                            <td>15 June 2030</td>
+                            <td><span class="status-badge open mb-0">Open</span></td>
+                            <td><a href="booking.html?dest=moon" class="astra-btn-outline astra-btn-sm">Book</a></td>
+                        </tr>
+                        <tr data-status="limited">
+                            <th scope="row" class="fw-bold text-white">ASTRA-RF04</th>
+                            <td>Mars (Olympus Mons)</td>
+                            <td>TITAN-LANDER Express</td>
+                            <td>180 Earth Days</td>
+                            <td>$2.4M</td>
+                            <td>10 September 2030</td>
+                            <td><span class="status-badge limited mb-0">Limited</span></td>
+                            <td><a href="booking.html?dest=mars" class="astra-btn-outline astra-btn-sm">Book</a></td>
+                        </tr>
+                        <tr data-status="planned">
+                            <th scope="row" class="fw-bold text-white">ASTRA-EO09</th>
+                            <td>Europa (Sub-Ocean)</td>
+                            <td>ORION-X Deep Space</td>
+                            <td>2 Years</td>
+                            <td>$8.7M</td>
+                            <td>20 March 2031</td>
+                            <td><span class="status-badge planned mb-0">Planned</span></td>
+                            <td><a href="booking.html?dest=europa" class="astra-btn-outline astra-btn-sm">Preview</a></td>
+                        </tr>
+                        <tr data-status="open">
+                            <th scope="row" class="fw-bold text-white">ASTRA-OR02</th>
+                            <td>Orbital Sanctuary</td>
+                            <td>ORION-X Ferry</td>
+                            <td>3 Earth Days</td>
+                            <td>$18,500</td>
+                            <td>15 January 2030</td>
+                            <td><span class="status-badge open mb-0">Open</span></td>
+                            <td><a href="booking.html?dest=orbital-spa" class="astra-btn-outline astra-btn-sm">Book</a></td>
+                        </tr>
+                        <tr data-status="limited">
+                            <th scope="row" class="fw-bold text-white">ASTRA-VN03</th>
+                            <td>Venus (Aphrodite Cloud)</td>
+                            <td>AEROSTAT Vanguard</td>
+                            <td>120 Earth Days</td>
+                            <td>$3.1M</td>
+                            <td>05 November 2030</td>
+                            <td><span class="status-badge limited mb-0">Limited</span></td>
+                            <td><a href="booking.html?dest=venus-cloud" class="astra-btn-outline astra-btn-sm">Book</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="astra-section">
+            <h2>Mission Readiness Status</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <article class="astra-card h-100 d-flex flex-column">
+                        <span class="status-badge open">Open for Enrollment</span>
+                        <h3>Lunar Horizon IV</h3>
+                        <p class="flex-grow-1">Short transit flight to Earth's satellite. Ideal for beginner astronauts, families, and science educators.</p>
+                        <p class="small text-secondary mb-3"><strong>Flight Crew:</strong> 2 Pilots, 1 Medical Officer &bull; 6 Berths</p>
+                        <a href="booking.html?dest=moon" class="astra-btn w-100 astra-btn-sm">Configure Lunar Berth</a>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="astra-card h-100 d-flex flex-column">
+                        <span class="status-badge limited">Only 2 Berths Left</span>
+                        <h3>Red Frontier Vanguard</h3>
+                        <p class="flex-grow-1">The grand tour of Mars. Full atmospheric descent with exploration of Olympus Mons and Mariner Valleys.</p>
+                        <p class="small text-secondary mb-3"><strong>Flight Crew:</strong> 3 Commanders, 1 Astrobiologist &bull; 4 Berths</p>
+                        <a href="booking.html?dest=mars" class="astra-btn w-100 astra-btn-sm">Configure Mars Berth</a>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="astra-card h-100 d-flex flex-column">
+                        <span class="status-badge planned">Under Engineering Prep</span>
+                        <h3>Europa Oceanic Odyssey</h3>
+                        <p class="flex-grow-1">Our premier deep space voyage into Jovian space with sub-ice exploration of geothermal seafloors.</p>
+                        <p class="small text-secondary mb-3"><strong>Flight Crew:</strong> Autonomous AI + 4 Specialists &bull; 4 Berths</p>
+                        <a href="booking.html?dest=europa" class="astra-btn-outline w-100 astra-btn-sm">Pre-Register Interest</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="astra-section">
+            <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                <div>
+                    <h2>Frequently Asked Questions</h2>
+                    <p class="small text-secondary mb-0">Pre-flight protocols, physical requirements, and zero-gravity acclimation.</p>
+                </div>
+                <span class="hero-badge">✦ Interactive jQuery Accordion</span>
+            </div>
+
+            <div class="faq-accordion" role="region" aria-label="Expedition FAQs">
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+                        <span>What medical clearance is required for civilian spaceflight?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="mb-0">
+                            All passengers undergo a cardiovascular stress screening and vestibular balance test at our Houston or Baikonur training facilities. Good general health is required, but Olympic athleticism is not necessary. Passengers with controlled blood pressure or corrective vision are eligible for Lunar and Orbital tiers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+                        <span>How long is the pre-flight astronaut training program?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="mb-0">
+                            Orbital Sanctuary and Lunar Horizon require a 5-day comprehensive orientation (centrifuge simulation, parabolic zero-g aircraft sessions, and emergency hatch drills). Interplanetary voyages to Mars require 3 weeks of biomechanical acclimation and closed-loop greenhouse protocols.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+                        <span>What is included in the base fare versus optional add-ons?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="mb-0">
+                            Base fares cover roundtrip rocket launch, custom-fitted biometric spacesuit, private stateroom berth, gourmet freeze-dried &amp; hydroponic dining, and telemetry telemetry support. Add-on packages provide extra EVA spacewalk hours, VIP Earth-relay broadband, and comprehensive cosmic health insurance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
+                        <span>Can I stay connected with family on Earth during the flight?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="mb-0">
+                            Yes. In Low Earth Orbit and around the Moon, high-throughput laser communications provide low-latency video calls and internet access. For Mars and Europa, signal transmission takes between 4 and 45 minutes each way due to light speed; voice messages and media packets are delivered in batch streams.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="astra-section">
+            <h2>Your Journey Milestones</h2>
+            <div class="grid grid-2">
+                <article class="astra-card">
+                    <div class="h5 text-info mb-1">Phase 01</div>
+                    <h3>Pre-Flight Training &amp; Suit Fitting</h3>
+                    <p class="mb-0">Five days of intensive zero-gravity simulator training and pressurized spacesuit tailoring at our spaceport.</p>
+                </article>
+
+                <article class="astra-card">
+                    <div class="h5 text-info mb-1">Phase 02</div>
+                    <h3>Orbital Insertion &amp; Stage Separation</h3>
+                    <p class="mb-0">Launch atop heavy-lift reusable booster. Within 9 minutes, experience pure sustained microgravity in Earth orbit.</p>
+                </article>
+
+                <article class="astra-card">
+                    <div class="h5 text-info mb-1">Phase 03</div>
+                    <h3>Trans-Lunar / Mars Injection Burn</h3>
+                    <p class="mb-0">Ignition of the high-efficiency ion drives towards your destination, accompanied by orbital champagne service.</p>
+                </article>
+
+                <article class="astra-card">
+                    <div class="h5 text-info mb-1">Phase 04</div>
+                    <h3>Planetary Arrival &amp; Return</h3>
+                    <p class="mb-0">Controlled descent to target outposts, surface exploration, and hypersonic atmospheric entry back to Earth.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="astra-footer">
+        <div class="container">
+            <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
+            <p class="small text-secondary mb-0">Built with HTML5, CSS3, Bootstrap 5.3 and jQuery 3.7.1.</p>
         </div>
-    </section>
-
-    <section class="section">
-        <h2>Mission status</h2>
-        <div class="row g-4">
-            <div class="col-12 col-md-4">
-                <article class="astra-card h-100">
-                    <span class="status open">Open</span>
-                    <h3>Moon — Lunar Horizon</h3>
-                    <p>A short journey to Earth's closest celestial destination.</p>
-                    <p>Duration: 7 days</p>
-                    <a href="booking.html" class="text-link">Configure your journey →</a>
-                </article>
-            </div>
-            <div class="col-12 col-md-4">
-                <article class="astra-card h-100">
-                    <span class="status limited">Limited</span>
-                    <h3>Mars — Red Frontier</h3>
-                    <p>A longer expedition to explore the red planet.</p>
-                    <p>Duration: 180 days</p>
-                    <a href="booking.html" class="text-link">Configure your journey →</a>
-                </article>
-            </div>
-            <div class="col-12 col-md-4">
-                <article class="astra-card h-100">
-                    <span class="status planned">Planned</span>
-                    <h3>Europa — Europa Odyssey</h3>
-                    <p>A future expedition to Jupiter's icy moon.</p>
-                    <p>Duration: 2 years</p>
-                    <a href="booking.html" class="text-link">Preview the price →</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2>Your mission timeline</h2>
-        <ol class="timeline">
-            <li class="astra-card">
-                <span class="step">01</span>
-                <h3>Choose a mission</h3>
-                <p>Select your destination, passengers and travel class.</p>
-            </li>
-            <li class="astra-card">
-                <span class="step">02</span>
-                <h3>Prepare for launch</h3>
-                <p>In the concept itinerary, meet the crew and complete training.</p>
-            </li>
-            <li class="astra-card">
-                <span class="step">03</span>
-                <h3>Explore space</h3>
-                <p>Follow the mission itinerary and discover your destination.</p>
-            </li>
-            <li class="astra-card">
-                <span class="step">04</span>
-                <h3>Return to Earth</h3>
-                <p>Finish the journey and share your mission memories.</p>
-            </li>
-        </ol>
-    </section>
-
-    <section class="section cta-panel">
-        <h2>Ready for your next adventure?</h2>
-        <p>Build your journey with the Space Travel Configurator.</p>
-        <a href="booking.html" class="btn">Start your journey</a>
-    </section>
-</main>
-<footer class="astra-footer">
-
-        <p>
-            © 2026 ASTRA Space Travel
-        </p>
-
     </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/missions.js"></script>
 </body>
 </html>

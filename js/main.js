@@ -1,11 +1,5 @@
-/**
- * ASTRA Space Travel - Main Global JavaScript
- * Handles active nav link highlighting, mobile collapse UX, 
- * jQuery Back to Top smooth scroll, and Home countdown timer.
- */
 
 $(document).ready(function () {
-    // 1. AUTO-HIGHLIGHT CURRENT NAV LINK BASED ON FILENAME
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
     
     $(".navbar-nav .nav-link").each(function () {
@@ -16,7 +10,6 @@ $(document).ready(function () {
         }
     });
 
-    // 2. CLOSE MOBILE NAVBAR ON LINK CLICK
     $(".navbar-nav .nav-link").on("click", function () {
         const navbarCollapse = $("#mainMenu");
         if (navbarCollapse.hasClass("show")) {
@@ -27,8 +20,7 @@ $(document).ready(function () {
         }
     });
 
-    // 3. JQUERY EFFECT: BACK TO TOP BUTTON WITH SMOOTH SCROLL
-    // Create button dynamically if not present
+
     if ($("#backToTopBtn").length === 0) {
         $("body").append(
             '<button id="backToTopBtn" type="button" aria-label="Scroll back to top" title="Back to top">↑</button>'
@@ -50,7 +42,6 @@ $(document).ready(function () {
         $("html, body").stop(true, false).animate({ scrollTop: 0 }, 600);
     });
 
-    // 4. JQUERY SMOOTH SCROLL FOR IN-PAGE ANCHORS
     $('a[href^="#"]:not([href="#"]):not([data-bs-toggle])').on("click", function (e) {
         const target = $(this.getAttribute("href"));
         if (target.length) {
@@ -61,25 +52,22 @@ $(document).ready(function () {
         }
     });
 
-    // 5. SIGNATURE FEATURE: LAUNCH COUNTDOWN TIMER (index.html)
     initLaunchCountdown();
 
-    // 6. ANIMATED NUMBER COUNTERS (index.html)
+
     initNumberCounters();
 });
 
-/**
- * Initializes live countdown to fictional next ASTRA mission
- */
+
 function initLaunchCountdown() {
     const $days = $("#countdownDays");
     const $hours = $("#countdownHours");
     const $mins = $("#countdownMins");
     const $secs = $("#countdownSecs");
 
-    if (!$days.length) return; // Exit if not on home page
+    if (!$days.length) return; 
 
-    // Target date: 15 June 2030, 09:00:00 UTC (or rolling 42 days for demo)
+
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 42);
     targetDate.setHours(targetDate.getHours() + 14);
@@ -112,9 +100,6 @@ function initLaunchCountdown() {
     setInterval(updateTimer, 1000);
 }
 
-/**
- * Animated statistics counter for mission achievements
- */
 function initNumberCounters() {
     const $counters = $(".stat-number");
     if (!$counters.length) return;

@@ -1,10 +1,3 @@
-/**
- * ASTRA Space Travel - Destinations Catalog JavaScript
- * Student 1: Mikhail Gulyayev
- * Meets Criterion 3: Array of 8+ objects, DOM manipulation, 
- * search, filter, sort, count & average price calculation, empty state.
- * Meets Criterion 4: jQuery Quick View Modal with fadeIn/fadeOut.
- */
 
 const destinationsData = [
     {
@@ -129,22 +122,18 @@ const destinationsData = [
     }
 ];
 
-// Current filter state
 let activeCategory = "all";
 let searchQuery = "";
 let currentSort = "featured";
 
 $(document).ready(function () {
-    // 1. Initial DOM render
     filterAndRender();
 
-    // 2. Search input event
     $("#destinationSearch").on("input", function () {
         searchQuery = $(this).val().trim().toLowerCase();
         filterAndRender();
     });
 
-    // Clear search on Escape key
     $("#destinationSearch").on("keydown", function (e) {
         if (e.key === "Escape") {
             $(this).val("");
@@ -153,7 +142,6 @@ $(document).ready(function () {
         }
     });
 
-    // 3. Category Filter buttons
     $(".filter-pill").on("click", function () {
         $(".filter-pill").removeClass("active");
         $(this).addClass("active");
@@ -161,13 +149,11 @@ $(document).ready(function () {
         filterAndRender();
     });
 
-    // 4. Sort dropdown change
     $("#sortSelect").on("change", function () {
         currentSort = $(this).val();
         filterAndRender();
     });
 
-    // 5. Empty State Reset button
     $(document).on("click", "#resetFiltersBtn", function () {
         searchQuery = "";
         activeCategory = "all";
@@ -179,7 +165,6 @@ $(document).ready(function () {
         filterAndRender();
     });
 
-    // 6. jQuery Feature: Quick View Modal (fadeIn / fadeOut)
     $(document).on("click", ".quick-view-btn", function (e) {
         e.preventDefault();
         const id = $(this).attr("data-id");
@@ -199,15 +184,10 @@ $(document).ready(function () {
     });
 });
 
-/**
- * Filter, sort and render destinations using DOM manipulation
- */
 function filterAndRender() {
     let results = destinationsData.filter(function (item) {
-        // Category check
         const matchesCategory = (activeCategory === "all") || (item.category === activeCategory);
         
-        // Search query check (title, description, or difficulty)
         const matchesSearch = !searchQuery || 
             item.title.toLowerCase().includes(searchQuery) || 
             item.description.toLowerCase().includes(searchQuery) ||
@@ -216,7 +196,6 @@ function filterAndRender() {
         return matchesCategory && matchesSearch;
     });
 
-    // Apply Sorting
     if (currentSort === "price-asc") {
         results.sort((a, b) => a.price - b.price);
     } else if (currentSort === "price-desc") {
@@ -231,9 +210,6 @@ function filterAndRender() {
     updateCalculatedStats(results);
 }
 
-/**
- * Generates DOM cards dynamically
- */
 function renderCards(list) {
     const $container = $("#destinationsContainer");
     $container.empty();
@@ -298,9 +274,7 @@ function renderCards(list) {
     });
 }
 
-/**
- * Calculates live count and average price
- */
+
 function updateCalculatedStats(list) {
     $("#shownCount").text(list.length);
     $("#totalCount").text(destinationsData.length);
@@ -314,9 +288,7 @@ function updateCalculatedStats(list) {
     }
 }
 
-/**
- * Formats numbers into currency format ($49,000 or $2.4M)
- */
+
 function formatPrice(num) {
     if (num >= 1000000) {
         return "$" + (num / 1000000).toFixed(1) + "M";
@@ -324,9 +296,6 @@ function formatPrice(num) {
     return "$" + num.toLocaleString("en-US");
 }
 
-/**
- * Modal viewer with jQuery fadeIn
- */
 function openQuickViewModal(id) {
     const dest = destinationsData.find(item => item.id === id);
     if (!dest) return;
