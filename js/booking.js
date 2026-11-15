@@ -30,7 +30,6 @@ $(document).ready(function () {
         $("#destination").val(destParam);
     }
 
-    // Pre-fill logged-in passenger information if session exists
     if (window.AstraAuth) {
         const session = AstraAuth.getSession();
         if (session) {
@@ -225,7 +224,6 @@ function handleSuccessfulSubmission() {
     if ($("#addonInsurance").is(":checked")) selectedAddons.push("Cosmic Radiation Insurance");
     if ($("#addonLounge").is(":checked")) selectedAddons.push("VIP Orbital Lounge");
 
-    // Persist reservation into astra_bookings
     const bookingData = {
         id: bookingCode,
         reference: bookingCode,
@@ -273,7 +271,6 @@ function handleSuccessfulSubmission() {
     $("#bookingForm")[0].reset();
     $("#bookingForm").find(".is-valid, .is-invalid").removeClass("is-valid is-invalid");
 
-    // Pre-fill user data again if logged in
     if (window.AstraAuth) {
         const session = AstraAuth.getSession();
         if (session) {

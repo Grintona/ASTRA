@@ -1,14 +1,3 @@
-/**
- * ASTRA Space Travel - Authentication & Session Management Module
- * Web Technologies 1 (Front End) - Final Project
- * 
- * Manages:
- * - Local user registration & login (astra_users)
- * - Session state (astra_session)
- * - Flight reservations (astra_bookings)
- * - Dynamic navbar authentication status
- */
-
 (function (window, $) {
     "use strict";
 
@@ -17,7 +6,6 @@
     const BOOKINGS_STORAGE_KEY = "astra_bookings";
 
     const AstraAuth = {
-        // --- Storage Helpers ---
         getUsers: function () {
             try {
                 const raw = localStorage.getItem(USERS_STORAGE_KEY);
@@ -78,7 +66,6 @@
             }
         },
 
-        // --- User Authentication ---
         registerUser: function (data) {
             const fullName = (data.fullName || "").trim();
             const email = (data.email || "").trim().toLowerCase();
@@ -107,7 +94,7 @@
                 id: "usr_" + Date.now().toString(36) + Math.random().toString(36).substr(2, 5),
                 fullName: fullName,
                 email: email,
-                password: password, // Demo client-side storage
+                password: password,
                 createdAt: new Date().toISOString()
             };
 
@@ -148,7 +135,6 @@
             this.clearSession();
         },
 
-        // --- Bookings Management ---
         getBookings: function (userEmail) {
             try {
                 const raw = localStorage.getItem(BOOKINGS_STORAGE_KEY);
@@ -225,7 +211,6 @@
             }
         },
 
-        // --- Navbar Synchronization ---
         updateNavbarAuth: function () {
             const session = this.getSession();
             const $profileLink = $("#navProfileLink");
@@ -266,11 +251,9 @@
             .replace(/'/g, "&#039;");
     }
 
-    // Handle Navbar Logout Click
     $(document).on("click", "#navLogoutBtn", function (e) {
         e.preventDefault();
         AstraAuth.logoutUser();
-        // If we are currently on profile.html, refresh view
         if (typeof window.renderProfileView === "function") {
             window.renderProfileView();
         } else if (window.location.pathname.endsWith("profile.html")) {

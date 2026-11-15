@@ -681,7 +681,6 @@
         requestAnimationFrame(frame);
     }
 
-    // Table links "Track on radar"
     $(document).on("click", "[data-track]", function () {
         trackShip($(this).attr("data-track"));
     });

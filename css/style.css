@@ -1561,11 +1561,6 @@ html[data-theme="light"] .radar-progress > span {
     background: linear-gradient(90deg, #7c5cff, #38bdf8);
 }
 
-/* ============================================================
-   AUTH & PASSENGER PROFILE MODULE STYLES
-   ============================================================ */
-
-/* Navbar Auth Styles */
 .nav-logout-btn {
     background: rgba(244, 63, 94, 0.12);
     border: 1px solid rgba(244, 63, 94, 0.4);
@@ -1601,7 +1596,6 @@ html[data-theme="light"] .radar-progress > span {
     margin-right: 4px;
 }
 
-/* Demo Warning Banner */
 .demo-warning-banner {
     background: rgba(245, 158, 11, 0.12);
     border: 1px solid rgba(245, 158, 11, 0.35);
@@ -1616,7 +1610,6 @@ html[data-theme="light"] .radar-progress > span {
     line-height: 1;
 }
 
-/* Auth Card & Tabs */
 .auth-wrapper {
     max-width: 580px;
     margin: 0 auto;
@@ -1657,7 +1650,6 @@ html[data-theme="light"] .radar-progress > span {
     box-shadow: 0 2px 10px rgba(124, 92, 255, 0.4);
 }
 
-/* Passenger Overview Card */
 .passenger-overview-card {
     border-left: 4px solid var(--accent-cyan);
 }
@@ -1677,7 +1669,6 @@ html[data-theme="light"] .radar-progress > span {
     flex-shrink: 0;
 }
 
-/* Telemetry Stats Cards */
 .flight-stat-card {
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
@@ -1704,7 +1695,6 @@ html[data-theme="light"] .radar-progress > span {
     margin-bottom: 4px;
 }
 
-/* Flight History Items */
 .booking-item-card {
     border: 1px solid var(--border-color);
     transition: all 0.25s ease;
@@ -1715,7 +1705,6 @@ html[data-theme="light"] .radar-progress > span {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
-/* Light Mode Overrides for Auth & Profile */
 html[data-theme="light"] .nav-logout-btn {
     background: rgba(244, 63, 94, 0.08);
     border-color: rgba(244, 63, 94, 0.35);
