@@ -1,13 +1,20 @@
 
 $(document).ready(function () {
     initThemeToggle();
+    const $savedLink = $('<a class="nav-link" href="profile.html#savedTours" id="navSavedLink" aria-live="polite"></a>');
+    $("#navProfileLink").before($savedLink);
+    function updateSavedCount() {
+        $savedLink.text("Saved (" + AstraFavorites.count() + ")");
+    }
+    updateSavedCount();
+    $(document).on("astra:favoritesChange", updateSavedCount);
 
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
     
-    $(".navbar-nav .nav-link").each(function () {
+    $(".navbar-nav .nav-link, .navbar-nav .nav-cta-btn").each(function () {
         const href = $(this).attr("href");
         if (href === currentPath || (currentPath === "" && href === "index.html")) {
-            $(".navbar-nav .nav-link").removeClass("active").removeAttr("aria-current");
+            $(".navbar-nav .nav-link, .navbar-nav .nav-cta-btn").removeClass("active").removeAttr("aria-current");
             $(this).addClass("active").attr("aria-current", "page");
         }
     });

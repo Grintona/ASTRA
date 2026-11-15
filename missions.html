@@ -12,7 +12,7 @@
 <body>
 
     <header class="astra-header">
-        <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
+        <nav class="navbar navbar-expand-xl astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
             <div class="container">
                 <a href="index.html" class="navbar-brand logo">
                     ASTRA <span class="logo-dot"></span>
@@ -30,7 +30,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="mainMenu">
-                    <div class="navbar-nav ms-auto align-items-md-center">
+                    <div class="navbar-nav ms-auto align-items-xl-center">
                         <a class="nav-link" href="index.html">Home</a>
                         <a class="nav-link" href="destinations.html">Destinations</a>
                         <a class="nav-link active" href="missions.html" aria-current="page">Missions</a>
@@ -64,13 +64,12 @@
                     <h2 id="radarHeading">Live Mission Radar</h2>
                     <p class="small text-secondary mb-0">Planets orbit in real time, ASTRA ships fly on the launch windows of the schedule below. Click anything to inspect it.</p>
                 </div>
-                <span class="hero-badge">✦ Interactive Solar System</span>
             </div>
 
             <div class="radar-layout">
                 <div class="radar-stage">
                     <div class="radar-hud">
-                        <span class="radar-date" id="radarDate" aria-label="Simulation date">01 Dec 2029</span>
+                        <span class="radar-date" id="radarDate" role="status" aria-label="Simulation date">01 Dec 2029</span>
                         <span class="radar-next" id="radarNext" aria-live="off"></span>
                     </div>
 
@@ -107,7 +106,7 @@
                     <button type="button" class="filter-pill mission-filter-btn" data-status="planned">Planned</button>
                 </div>
             </div>
-            <div class="table-shell" tabindex="0" aria-label="Scrollable mission schedule table">
+            <div class="table-shell" role="region" tabindex="0" aria-label="Scrollable mission schedule table">
                 <table class="table mission-table align-middle mb-0">
                     <caption class="visually-hidden">Official ASTRA civilian mission launch schedule</caption>
                     <thead>
@@ -217,7 +216,6 @@
                     <h2>Frequently Asked Questions</h2>
                     <p class="small text-secondary mb-0">Pre-flight protocols, physical requirements, and zero-gravity acclimation.</p>
                 </div>
-                <span class="hero-badge">✦ Interactive jQuery Accordion</span>
             </div>
 
             <div class="faq-accordion" role="region" aria-label="Expedition FAQs">
@@ -304,12 +302,13 @@
     <footer class="astra-footer">
         <div class="container">
             <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
-            <p class="small text-secondary mb-0">Built with HTML5, CSS3, Bootstrap 5.3 and jQuery 3.7.1.</p>
+            <p class="small text-secondary mb-0">A student project about space travel. All trips are fictional.</p>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/favorites.js"></script>
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/missions.js"></script>

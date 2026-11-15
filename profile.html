@@ -12,7 +12,7 @@
 <body>
 
     <header class="astra-header">
-        <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
+        <nav class="navbar navbar-expand-xl astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
             <div class="container">
                 <a href="index.html" class="navbar-brand logo">
                     ASTRA <span class="logo-dot"></span>
@@ -31,7 +31,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="mainMenu">
-                    <div class="navbar-nav ms-auto align-items-md-center">
+                    <div class="navbar-nav ms-auto align-items-xl-center">
                         <a class="nav-link" href="index.html">Home</a>
                         <a class="nav-link" href="destinations.html">Destinations</a>
                         <a class="nav-link" href="missions.html">Missions</a>
@@ -52,10 +52,10 @@
 
     <main class="container my-5">
         <section class="page-heading mb-4 text-center">
-            <span class="hero-badge">✦ Interstellar Passenger Terminal</span>
+            <span class="hero-badge">Your ASTRA account</span>
             <h1>PASSENGER PORTAL</h1>
             <p style="max-width: 680px; margin: 0 auto;">
-                Manage your astronaut credentials, track orbital reservations, and review past flight itineraries.
+                View your bookings and keep a shortlist of trips.
             </p>
         </section>
 
@@ -73,9 +73,9 @@
                         </svg>
                     </span>
                     <div>
-                        <h2 class="h5 mb-1 text-warning">Demonstration Website Security Notice</h2>
+                        <h2 class="h5 mb-1 text-warning">Demo accounts</h2>
                         <p class="small mb-0 text-secondary">
-                            This is an educational front-end project (Web Technologies 1). User credentials and flight data are saved solely in your local browser storage (<code>localStorage</code>) in plaintext. <strong>Do NOT use real passwords or sensitive personal information.</strong>
+                            Accounts are stored in this browser, and passwords are not encrypted. <strong>Use a made-up password and sample personal details.</strong>
                         </p>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                                 <div id="loginTabPane" role="tabpanel" aria-labelledby="tabLoginBtn">
                     <form id="loginForm" novalidate>
                         <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Orbital Email Address *</label>
+                            <label for="loginEmail" class="form-label">Email address *</label>
                             <input
                                 type="email"
                                 class="form-control"
@@ -125,7 +125,7 @@
                         <div id="loginGeneralFeedback" class="alert alert-danger d-none my-3 py-2 small" role="alert"></div>
 
                         <button type="submit" id="loginSubmitBtn" class="astra-btn w-100 py-3 mt-2">
-                            Log In to Astral Terminal →
+                            Log In
                         </button>
                     </form>
                 </div>
@@ -133,7 +133,7 @@
                                 <div id="signupTabPane" class="d-none" role="tabpanel" aria-labelledby="tabSignupBtn">
                     <form id="signupForm" novalidate>
                         <div class="mb-3">
-                            <label for="signupFullName" class="form-label">Full Legal Name *</label>
+                            <label for="signupFullName" class="form-label">Full name *</label>
                             <input
                                 type="text"
                                 class="form-control"
@@ -147,7 +147,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="signupEmail" class="form-label">Orbital Email Address *</label>
+                            <label for="signupEmail" class="form-label">Email address *</label>
                             <input
                                 type="email"
                                 class="form-control"
@@ -209,7 +209,7 @@
                                 <span class="status-badge open">Active Passenger</span>
                             </div>
                             <p class="mb-0 text-secondary small">
-                                Orbital ID: <span id="passengerEmailDisplay" class="text-info">user@astra.space</span> &bull; 
+                                Email: <span id="passengerEmailDisplay" class="text-info">user@astra.space</span> &bull; 
                                 Member Since: <span id="passengerJoinDate" class="text-white">2026</span>
                             </p>
                         </div>
@@ -228,14 +228,14 @@
                         <div class="row g-3 mb-4">
                 <div class="col-12 col-sm-6">
                     <div class="astra-card flight-stat-card text-center p-3">
-                        <span class="flight-stat-label">Total Expeditions Booked</span>
+                        <span class="flight-stat-label">Bookings</span>
                         <div class="flight-stat-value text-info" id="statBookingsCount">0</div>
-                        <span class="small text-secondary">Logged in astra_bookings telemetry</span>
+                        <span class="small text-secondary">Saved reservations</span>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6">
                     <div class="astra-card flight-stat-card text-center p-3">
-                        <span class="flight-stat-label">Cumulative Flight Investment</span>
+                        <span class="flight-stat-label">Total fares</span>
                         <div class="flight-stat-value text-success" id="statBookingsTotal">$0</div>
                         <span class="small text-secondary">Estimated total reservation fares</span>
                     </div>
@@ -245,8 +245,8 @@
                         <section class="flight-history-section">
                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
                     <div>
-                        <h2 class="h4 mb-1">Interstellar Flight History</h2>
-                        <p class="small text-secondary mb-0">Your confirmed reservations saved in browser <code>localStorage</code>.</p>
+                        <h2 class="h4 mb-1">Your bookings</h2>
+                        <p class="small text-secondary mb-0">Reservations saved in this browser.</p>
                     </div>
                     <button type="button" class="btn btn-sm btn-outline-danger" id="clearAllBookingsBtn" style="border-radius: 8px;">
                         Clear All Bookings
@@ -263,370 +263,40 @@
                             <ellipse cx="12" cy="12" rx="11" ry="4" transform="rotate(-20 12 12)"/>
                         </svg>
                     </div>
-                    <h3 class="h4 mb-2">No Expeditions Booked Yet</h3>
+                    <h3 class="h4 mb-2">No bookings yet</h3>
                     <p class="text-secondary mx-auto mb-4" style="max-width: 500px;">
-                        You have not scheduled any interplanetary journeys. Configure a custom trajectory to the Moon, Mars, Europa, or Titan using our flight configurator!
+                        Choose a destination to make your first booking.
                     </p>
                     <a href="booking.html" class="astra-btn">
-                        Launch Flight Configurator →
+                        Browse trips
                     </a>
                 </div>
             </section>
         </section>
 
+        <section id="savedTours" class="my-5" aria-labelledby="savedToursHeading" style="scroll-margin-top: 100px;">
+            <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+                <div><h2 id="savedToursHeading" class="h4">Saved tours</h2><p class="small text-secondary mb-0">Your shortlist, saved in this browser.</p></div>
+                <button type="button" id="clearFavoritesBtn" class="astra-btn-outline astra-btn-sm">Clear All</button>
+            </div>
+            <p id="savedToursEmpty">No saved tours yet. <a href="destinations.html">Browse destinations</a>.</p>
+            <div id="savedToursList" class="d-flex flex-column gap-3"></div>
+            <p class="mt-3" aria-live="polite">Total base fares: <strong id="savedToursTotal">$0</strong></p>
+        </section>
     </main>
 
     <footer class="astra-footer">
         <div class="container">
             <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
-            <p class="small text-secondary mb-0">Built with HTML5, CSS3, Bootstrap 5.3 and jQuery 3.7.1. All missions and spacecraft concepts are fictional.</p>
+            <p class="small text-secondary mb-0">A student project about space travel. All trips are fictional.</p>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/favorites.js"></script>
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
-    <script>
-    $(document).ready(function () {
-        renderProfileView();
-
-        $(document).on("astra:authChange", function () {
-            renderProfileView();
-        });
-
-        $("#tabLoginBtn").on("click", function () {
-            switchAuthTab("login");
-        });
-
-        $("#tabSignupBtn").on("click", function () {
-            switchAuthTab("signup");
-        });
-
-        $("#loginForm, #signupForm").on("input change", "input", function () {
-            clearFieldError($(this));
-            $("#loginGeneralFeedback").addClass("d-none").text("");
-        });
-
-        $("#loginForm").on("submit", function (e) {
-            e.preventDefault();
-            handleLoginSubmit();
-        });
-
-        $("#signupForm").on("submit", function (e) {
-            e.preventDefault();
-            handleSignupSubmit();
-        });
-
-        $("#cabinetLogoutBtn").on("click", function () {
-            AstraAuth.logoutUser();
-            showGlobalAlert("You have logged out of your ASTRA account.", "info");
-            renderProfileView();
-        });
-
-        $("#clearAllBookingsBtn").on("click", function () {
-            const session = AstraAuth.getSession();
-            if (!session) return;
-
-            const bookings = AstraAuth.getBookings(session.email);
-            if (!bookings.length) {
-                showGlobalAlert("There are no bookings to clear.", "warning");
-                return;
-            }
-
-            if (confirm("Are you sure you want to clear all your booked spaceflight reservations?")) {
-                AstraAuth.clearAllBookings(session.email);
-                showGlobalAlert("All flight reservations have been cleared.", "info");
-                renderBookingsList();
-            }
-        });
-
-        $(document).on("click", ".btn-remove-booking", function () {
-            const bookingId = $(this).attr("data-id");
-            if (!bookingId) return;
-
-            const $card = $(this).closest(".booking-item-card");
-            $card.fadeOut(350, function () {
-                AstraAuth.removeBooking(bookingId);
-                showGlobalAlert("Reservation #" + bookingId + " has been cancelled.", "info");
-                renderBookingsList();
-            });
-        });
-    });
-
-    function switchAuthTab(tab) {
-        if (tab === "login") {
-            $("#tabLoginBtn").addClass("active").attr("aria-selected", "true");
-            $("#tabSignupBtn").removeClass("active").attr("aria-selected", "false");
-            $("#loginTabPane").removeClass("d-none");
-            $("#signupTabPane").addClass("d-none");
-        } else {
-            $("#tabSignupBtn").addClass("active").attr("aria-selected", "true");
-            $("#tabLoginBtn").removeClass("active").attr("aria-selected", "false");
-            $("#signupTabPane").removeClass("d-none");
-            $("#loginTabPane").addClass("d-none");
-        }
-    }
-
-    function renderProfileView() {
-        const session = AstraAuth.getSession();
-
-        if (session) {
-            $("#guestPortalView").addClass("d-none");
-            $("#passengerCabinetView").removeClass("d-none");
-
-            const initial = session.fullName ? session.fullName.charAt(0).toUpperCase() : "A";
-            $("#passengerAvatarInitial").text(initial);
-            $("#passengerDisplayName").text(session.fullName);
-            $("#passengerEmailDisplay").text(session.email);
-            
-            const joinDate = session.loggedInAt ? new Date(session.loggedInAt).toLocaleDateString() : "Active";
-            $("#passengerJoinDate").text(joinDate);
-
-            renderBookingsList();
-        } else {
-            $("#passengerCabinetView").addClass("d-none");
-            $("#guestPortalView").removeClass("d-none");
-        }
-    }
-
-    function renderBookingsList() {
-        const session = AstraAuth.getSession();
-        if (!session) return;
-
-        const bookings = AstraAuth.getBookings(session.email);
-        const $container = $("#bookingsListContainer");
-        const $emptyState = $("#bookingsEmptyState");
-        const $clearBtn = $("#clearAllBookingsBtn");
-
-        $("#statBookingsCount").text(bookings.length);
-
-        if (!bookings.length) {
-            $container.empty();
-            $emptyState.removeClass("d-none");
-            $clearBtn.hide();
-            $("#statBookingsTotal").text("$0");
-            return;
-        }
-
-        $emptyState.addClass("d-none");
-        $clearBtn.show();
-
-        let totalInvestment = 0;
-        let html = "";
-
-        bookings.forEach(function (b) {
-            const rawPrice = b.totalPrice ? String(b.totalPrice).replace(/[^0-9.]/g, "") : "0";
-            const numPrice = parseFloat(rawPrice) || 0;
-            totalInvestment += numPrice;
-
-            const dateStr = b.departureDate || "Scheduled 2030";
-            const createdStr = b.createdAt ? new Date(b.createdAt).toLocaleDateString() : "Recent";
-            const addonsList = Array.isArray(b.addons) && b.addons.length ? b.addons.join(", ") : "Standard Payload";
-
-            html += `
-                <article class="astra-card booking-item-card p-4" data-id="${escapeHtml(b.id)}">
-                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-3 border-bottom border-secondary-subtle pb-3">
-                        <div class="d-flex align-items-center gap-2 flex-wrap">
-                            <span class="badge bg-primary-subtle text-info fw-bold font-monospace" style="font-size: 14px;">
-                                ${escapeHtml(b.id || b.reference)}
-                            </span>
-                            <span class="status-badge open">Confirmed Telemetry</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-2">
-                            <span class="small text-secondary">Booked: ${escapeHtml(createdStr)}</span>
-                            <button type="button" class="btn btn-outline-danger btn-sm btn-remove-booking ms-2" data-id="${escapeHtml(b.id)}" title="Cancel this reservation">
-                                Cancel Booking
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="row g-3">
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <span class="small text-secondary d-block">Destination</span>
-                            <strong class="text-white">${escapeHtml(b.destination || b.destinationName || "Solar Orbit")}</strong>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <span class="small text-secondary d-block">Launch Date &amp; Duration</span>
-                            <span class="text-white">${escapeHtml(dateStr)} &bull; ${escapeHtml(b.duration || "N/A")}</span>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <span class="small text-secondary d-block">Lead Passenger</span>
-                            <span class="text-white">${escapeHtml(b.fullName || b.passengerName || session.fullName)}</span>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <span class="small text-secondary d-block">Travel Tier &amp; Crew</span>
-                            <span class="text-white">${escapeHtml(b.travelClass || "Explorer")} &bull; ${escapeHtml(String(b.passengers || 1))} Person(s)</span>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <span class="small text-secondary d-block">Expedition Add-Ons</span>
-                            <span class="text-secondary small">${escapeHtml(addonsList)}</span>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <span class="small text-secondary d-block">Total Fare &amp; Deposit</span>
-                            <strong class="text-success">${escapeHtml(b.totalPrice || "$0")}</strong>
-                            <small class="text-secondary">(20% Deposit: ${escapeHtml(b.depositPrice || "$0")})</small>
-                        </div>
-                    </div>
-                </article>
-            `;
-        });
-
-        $container.html(html);
-        $("#statBookingsTotal").text("$" + Math.round(totalInvestment).toLocaleString("en-US"));
-    }
-
-    function handleLoginSubmit() {
-        const $email = $("#loginEmail");
-        const $pass = $("#loginPassword");
-        const email = $email.val().trim();
-        const pass = $pass.val().trim();
-
-        let valid = true;
-        if (!email) {
-            showFieldError($email, "Please enter your orbital email address.");
-            valid = false;
-        } else {
-            markFieldValid($email);
-        }
-
-        if (!pass) {
-            showFieldError($pass, "Please enter your password.");
-            valid = false;
-        } else {
-            markFieldValid($pass);
-        }
-
-        if (!valid) return;
-
-        const res = AstraAuth.loginUser(email, pass);
-        if (!res.success) {
-            $("#loginGeneralFeedback")
-                .removeClass("d-none")
-                .text(res.message || "Invalid credentials.");
-            return;
-        }
-
-        $("#loginForm")[0].reset();
-        clearFieldError($email);
-        clearFieldError($pass);
-        showGlobalAlert("Welcome back, Astronaut " + res.user.fullName + "! Clearance verified.", "success");
-        renderProfileView();
-    }
-
-    function handleSignupSubmit() {
-        const $name = $("#signupFullName");
-        const $email = $("#signupEmail");
-        const $pass = $("#signupPassword");
-        const $conf = $("#signupConfirmPassword");
-
-        const nameVal = $name.val().trim();
-        const emailVal = $email.val().trim();
-        const passVal = $pass.val().trim();
-        const confVal = $conf.val().trim();
-
-        let valid = true;
-
-        if (!nameVal || nameVal.split(/\s+/).length < 2) {
-            showFieldError($name, "Please provide your first and last name (letters only).");
-            valid = false;
-        } else {
-            markFieldValid($name);
-        }
-
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!emailVal || !emailRegex.test(emailVal)) {
-            showFieldError($email, "Please provide a valid email address (e.g. name@domain.com).");
-            valid = false;
-        } else {
-            markFieldValid($email);
-        }
-
-        if (!passVal || passVal.length < 6) {
-            showFieldError($pass, "Password must be at least 6 characters.");
-            valid = false;
-        } else {
-            markFieldValid($pass);
-        }
-
-        if (confVal !== passVal) {
-            showFieldError($conf, "Passwords do not match.");
-            valid = false;
-        } else {
-            markFieldValid($conf);
-        }
-
-        if (!valid) return;
-
-        const res = AstraAuth.registerUser({
-            fullName: nameVal,
-            email: emailVal,
-            password: passVal
-        });
-
-        if (!res.success) {
-            if (res.field === "email") {
-                showFieldError($email, res.message);
-            } else {
-                showFieldError($name, res.message);
-            }
-            return;
-        }
-
-        $("#signupForm")[0].reset();
-        $("#signupForm").find(".is-valid, .is-invalid").removeClass("is-valid is-invalid");
-        showGlobalAlert("Welcome aboard ASTRA, " + res.user.fullName + "! Your astronaut account is now active.", "success");
-        renderProfileView();
-    }
-
-    function showFieldError($field, message) {
-        $field.removeClass("is-valid").addClass("is-invalid");
-        let $feedback = $field.siblings(".invalid-feedback");
-        if ($feedback.length === 0) {
-            $feedback = $field.parent().find(".invalid-feedback");
-        }
-        $feedback.text(message).show();
-    }
-
-    function clearFieldError($field) {
-        $field.removeClass("is-invalid");
-        let $feedback = $field.siblings(".invalid-feedback");
-        if ($feedback.length === 0) {
-            $feedback = $field.parent().find(".invalid-feedback");
-        }
-        $feedback.hide().text("");
-    }
-
-    function markFieldValid($field) {
-        clearFieldError($field);
-        $field.addClass("is-valid");
-    }
-
-    function showGlobalAlert(message, type) {
-        const $alert = $("#authGlobalAlert");
-        $alert
-            .removeClass("d-none alert-success alert-danger alert-info alert-warning")
-            .addClass("alert-" + (type || "info"))
-            .text(message)
-            .hide()
-            .fadeIn(300);
-
-        setTimeout(function () {
-            $alert.fadeOut(400);
-        }, 5000);
-    }
-
-    function escapeHtml(text) {
-        if (!text) return "";
-        return String(text)
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }
-
-    window.renderProfileView = renderProfileView;
-    </script>
+    <script src="js/profile.js"></script>
 </body>
 </html>

@@ -4,6 +4,8 @@ const DESTINATION_RATES = {
     "europa": { name: "Europa — Sub-Oceanic Lab", baseFare: 8700000, duration: "2 Years", minDate: "2031-03-20" },
     "titan": { name: "Titan — Methane Dunes", baseFare: 12500000, duration: "3 Years", minDate: "2031-10-01" },
     "orbital-spa": { name: "ASTRA Orbital Sanctuary", baseFare: 18500, duration: "3 Earth Days", minDate: "2030-01-15" },
+    "ceres-port": { name: "Ceres - Asteroid Belt Waystation", baseFare: 5400000, duration: "365 Earth Days", minDate: "2031-01-01" },
+    "helios-watch": { name: "Helios - Solar Corona Watch", baseFare: 4200000, duration: "90 Earth Days", minDate: "2030-01-15" },
     "venus-cloud": { name: "Venus — Aphrodite Cloud City", baseFare: 3100000, duration: "120 Earth Days", minDate: "2030-11-05" }
 
 };
@@ -130,7 +132,7 @@ function validateBookingForm() {
         showFieldError($phone, "Emergency contact phone is required.");
         isValid = false;
         if (!$firstInvalid) $firstInvalid = $phone;
-    } else if (!phoneRegex.test(phoneVal)) {
+    } else if (!phoneRegex.test(phoneVal) || phoneVal.replace(/\D/g, "").length < 10 || phoneVal.replace(/\D/g, "").length > 18) {
         showFieldError($phone, "Enter a valid phone number (10-18 digits, e.g. +7 701 123 4567).");
         isValid = false;
         if (!$firstInvalid) $firstInvalid = $phone;
@@ -146,9 +148,9 @@ function validateBookingForm() {
         if (!$firstInvalid) $firstInvalid = $departure;
     } else {
         const selectedDate = new Date(dateVal);
-        const earliestAllowed = new Date("2030-01-01");
-        if (selectedDate < earliestAllowed) {
-            showFieldError($departure, "Commercial departures start from 2030 onwards.");
+        const earliestAllowed = new Date((DESTINATION_RATES[$("#destination").val()] || DESTINATION_RATES.moon).minDate);
+        if (isNaN(selectedDate.getTime()) || selectedDate < earliestAllowed) {
+            showFieldError($departure, "Choose a date on or after " + earliestAllowed.toISOString().slice(0, 10) + ".");
             isValid = false;
             if (!$firstInvalid) $firstInvalid = $departure;
         } else {
@@ -157,8 +159,8 @@ function validateBookingForm() {
     }
 
     const $passengers = $("#passengers");
-    const passCount = parseInt($passengers.val(), 10);
-    if (isNaN(passCount) || passCount < 1 || passCount > 6) {
+    const passCount = Number($passengers.val());
+    if (!Number.isInteger(passCount) || passCount < 1 || passCount > 6) {
         showFieldError($passengers, "Passenger limit per stateroom booking is 1 to 6.");
         isValid = false;
         if (!$firstInvalid) $firstInvalid = $passengers;
@@ -167,13 +169,20 @@ function validateBookingForm() {
     }
 
     const $dest = $("#destination");
-    if (!$dest.val()) {
+    if (!DESTINATION_RATES[$dest.val()]) {
         showFieldError($dest, "Please choose a spaceflight destination.");
         isValid = false;
         if (!$firstInvalid) $firstInvalid = $dest;
     } else {
         markFieldValid($dest);
     }
+
+    const $travelClass = $("#travelClass");
+    if (!CLASS_MULTIPLIERS[$travelClass.val()]) {
+        showFieldError($travelClass, "Please select a travel class.");
+        isValid = false;
+        if (!$firstInvalid) $firstInvalid = $travelClass;
+    } else { markFieldValid($travelClass); }
 
     if ($firstInvalid) {
         $firstInvalid.focus();
@@ -242,18 +251,13 @@ function handleSuccessfulSubmission() {
         createdAt: new Date().toISOString()
     };
 
-    if (window.AstraAuth) {
-        window.AstraAuth.saveBooking(bookingData);
-    } else {
-        try {
-            const raw = localStorage.getItem("astra_bookings");
-            const list = raw ? JSON.parse(raw) : [];
-            list.unshift(bookingData);
-            localStorage.setItem("astra_bookings", JSON.stringify(list));
-        } catch (e) {
-            console.error("Failed to save booking to localStorage", e);
-        }
+    if (!window.AstraAuth || !window.AstraAuth.saveBooking(bookingData)) {
+        $("#bookingSuccessCard").hide();
+        if (!$("#bookingStorageError").length) $("#bookingForm").prepend('<p id="bookingStorageError" class="alert alert-danger" role="alert"></p>');
+        $("#bookingStorageError").text("Could not save your booking. Check browser storage and try again.");
+        return;
     }
+    $("#bookingStorageError").remove();
 
     $("#confirmedCode").text(bookingCode);
     $("#confirmedPassenger").text(passengerName);

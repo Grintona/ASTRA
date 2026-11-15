@@ -6,10 +6,14 @@
     const BOOKINGS_STORAGE_KEY = "astra_bookings";
 
     const AstraAuth = {
+        isValidFullName: function (name) {
+            return name.length >= 3 && name.length <= 80 && /^[\p{L}\p{M}]+(?:[\s'\u2019-]+[\p{L}\p{M}]+)+$/u.test(name);
+        },
         getUsers: function () {
             try {
                 const raw = localStorage.getItem(USERS_STORAGE_KEY);
-                return raw ? JSON.parse(raw) : [];
+                const users = raw ? JSON.parse(raw) : [];
+                return Array.isArray(users) ? users.filter(u => u && typeof u.email === "string" && typeof u.fullName === "string") : [];
             } catch (err) {
                 console.error("Failed to load users from localStorage", err);
                 return [];
@@ -29,7 +33,8 @@
         getSession: function () {
             try {
                 const raw = localStorage.getItem(SESSION_STORAGE_KEY);
-                return raw ? JSON.parse(raw) : null;
+                const session = raw ? JSON.parse(raw) : null;
+                return session && typeof session.email === "string" && typeof session.fullName === "string" ? session : null;
             } catch (err) {
                 console.error("Failed to parse session", err);
                 return null;
@@ -42,6 +47,7 @@
                     id: user.id,
                     fullName: user.fullName,
                     email: user.email.toLowerCase(),
+                    createdAt: user.createdAt,
                     loggedInAt: new Date().toISOString()
                 };
                 localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessionPayload));
@@ -71,7 +77,7 @@
             const email = (data.email || "").trim().toLowerCase();
             const password = (data.password || "").trim();
 
-            if (!fullName || fullName.length < 3) {
+            if (!this.isValidFullName(fullName)) {
                 return { success: false, field: "fullName", message: "Please enter your full legal name." };
             }
 
@@ -99,8 +105,8 @@
             };
 
             users.push(newUser);
-            this.saveUsers(users);
-            this.setSession(newUser);
+            if (!this.saveUsers(users)) return { success: false, field: "general", message: "Could not save your account. Check browser storage and try again." };
+            if (!this.setSession(newUser)) return { success: false, field: "general", message: "Account created, but sign-in failed. Please log in again." };
 
             return { success: true, user: newUser };
         },
@@ -123,11 +129,11 @@
                 return {
                     success: false,
                     field: "general",
-                    message: "Incorrect orbital email or demo password. Please try again or create a new account."
+                    message: "Incorrect email or password. Please try again."
                 };
             }
 
-            this.setSession(foundUser);
+            if (!this.setSession(foundUser)) return { success: false, field: "general", message: "Could not sign in. Check browser storage and try again." };
             return { success: true, user: foundUser };
         },
 
@@ -138,14 +144,14 @@
         getBookings: function (userEmail) {
             try {
                 const raw = localStorage.getItem(BOOKINGS_STORAGE_KEY);
-                const all = raw ? JSON.parse(raw) : [];
+                const parsed = raw ? JSON.parse(raw) : [];
+                const all = Array.isArray(parsed) ? parsed.filter(b => b && typeof b === "object") : [];
                 if (!userEmail) {
                     return all;
                 }
                 const normalized = userEmail.toLowerCase();
                 return all.filter(b => 
-                    (b.userEmail && b.userEmail.toLowerCase() === normalized) ||
-                    (b.email && b.email.toLowerCase() === normalized)
+                    String(b.userEmail || b.email || "").toLowerCase() === normalized
                 );
             } catch (err) {
                 console.error("Failed to load bookings", err);
@@ -179,7 +185,9 @@
             try {
                 const raw = localStorage.getItem(BOOKINGS_STORAGE_KEY);
                 let bookings = raw ? JSON.parse(raw) : [];
-                bookings = bookings.filter(b => b.id !== bookingId && b.reference !== bookingId);
+                const session = this.getSession();
+                if (!session) return false;
+                bookings = bookings.filter(b => String(b.userEmail || b.email || "").toLowerCase() !== session.email.toLowerCase() || (b.id !== bookingId && b.reference !== bookingId));
                 localStorage.setItem(BOOKINGS_STORAGE_KEY, JSON.stringify(bookings));
                 $(document).trigger("astra:bookingRemoved", [bookingId]);
                 return true;
@@ -198,8 +206,7 @@
                     const raw = localStorage.getItem(BOOKINGS_STORAGE_KEY);
                     let bookings = raw ? JSON.parse(raw) : [];
                     bookings = bookings.filter(b => 
-                        (b.userEmail && b.userEmail.toLowerCase() !== normalized) &&
-                        (b.email && b.email.toLowerCase() !== normalized)
+                        String(b.userEmail || b.email || "").toLowerCase() !== normalized
                     );
                     localStorage.setItem(BOOKINGS_STORAGE_KEY, JSON.stringify(bookings));
                 }

@@ -13,7 +13,7 @@
 
     
     <header class="astra-header">
-        <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
+        <nav class="navbar navbar-expand-xl astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
             <div class="container">
                 <a href="index.html" class="navbar-brand logo">
                     ASTRA <span class="logo-dot"></span>
@@ -34,7 +34,7 @@
 
                 
                 <div class="collapse navbar-collapse" id="mainMenu">
-                    <div class="navbar-nav ms-auto align-items-md-center">
+                    <div class="navbar-nav ms-auto align-items-xl-center">
                         <a class="nav-link" href="index.html">Home</a>
                         <a class="nav-link" href="destinations.html">Destinations</a>
                         <a class="nav-link" href="missions.html">Missions</a>
@@ -84,7 +84,7 @@
                 </div>
 
                 
-                <article id="systemPanel" role="tabpanel" aria-labelledby="tab-orion-x" class="astra-card p-4 p-md-5 mb-5" aria-live="polite">
+                <div id="systemPanel" role="tabpanel" aria-labelledby="tab-orion-x" class="astra-card p-4 p-md-5 mb-5" aria-live="polite">
                     <div class="row g-4 align-items-center">
                         <div class="col-12 col-md-5 text-center">
                             <div class="p-3 rounded" style="background: rgba(7, 10, 19, 0.7); border: 1px solid var(--border-color);">
@@ -97,7 +97,7 @@
                                 >
                             </div>
                             <button type="button" id="inspectBlueprintBtn" class="astra-btn-outline astra-btn-sm w-100 mt-3">
-                                Enlarge Blueprint (jQuery Modal)
+                                Enlarge Blueprint
                             </button>
                         </div>
 
@@ -132,11 +132,11 @@
                             </div>
                         </div>
                     </div>
-                </article>
+                </div>
 
                 
                 <h2>Fleet Comparison Matrix</h2>
-                <div class="table-shell" tabindex="0" aria-label="Spacecraft fleet comparison">
+                <div class="table-shell" role="region" tabindex="0" aria-label="Spacecraft fleet comparison">
                     <table class="table mission-table align-middle">
                         <thead>
                             <tr>
@@ -206,13 +206,14 @@
     <footer class="astra-footer">
         <div class="container">
             <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
-            <p class="small text-secondary mb-0">Built with HTML5, CSS3, Bootstrap 5.3 and jQuery 3.7.1.</p>
+            <p class="small text-secondary mb-0">A student project about space travel. All trips are fictional.</p>
         </div>
     </footer>
 
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/favorites.js"></script>
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/technology.js"></script>

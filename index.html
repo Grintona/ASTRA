@@ -12,7 +12,7 @@
 <body>
 
     <header class="astra-header">
-        <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
+        <nav class="navbar navbar-expand-xl astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
             <div class="container">
                 <a href="index.html" class="navbar-brand logo">
                     ASTRA <span class="logo-dot"></span>
@@ -31,7 +31,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="mainMenu">
-                    <div class="navbar-nav ms-auto align-items-md-center">
+                    <div class="navbar-nav ms-auto align-items-xl-center">
                         <a class="nav-link active" href="index.html" aria-current="page">Home</a>
                         <a class="nav-link" href="destinations.html">Destinations</a>
                         <a class="nav-link" href="missions.html">Missions</a>
@@ -80,7 +80,7 @@
                     alt="ASTRA deep-space exploration vessel orbiting above a vibrant celestial body"
                 >
 
-                <div class="countdown-widget" aria-label="Next Mission Launch Timer">
+                <div class="countdown-widget" role="timer" aria-label="Next Mission Launch Timer">
                     <div class="countdown-title">Next Scheduled Departure &bull; Lunar Horizon IV</div>
                     <div class="countdown-grid">
                         <div class="countdown-box">
@@ -104,7 +104,8 @@
             </div>
         </section>
 
-        <section class="container">
+        <section class="container" aria-labelledby="statsHeading">
+            <h2 id="statsHeading" class="visually-hidden">ASTRA in numbers</h2>
             <div class="stats-grid">
                 <div class="stat-item">
                     <span class="stat-number" data-target="1420" data-suffix="+">1420+</span>
@@ -184,7 +185,7 @@
                             <p class="mb-3">
                                 <strong>Duration:</strong> 7 days &bull; <strong>Price:</strong> From $49,000
                             </p>
-                            <a href="booking.html" class="astra-btn w-100">Book Journey</a>
+                            <a href="booking.html?dest=moon" class="astra-btn w-100">Book Journey</a>
                         </article>
                     </div>
 
@@ -201,7 +202,7 @@
                             <p class="mb-3">
                                 <strong>Duration:</strong> 180 days &bull; <strong>Price:</strong> From $2.4M
                             </p>
-                            <a href="booking.html" class="astra-btn w-100">Book Journey</a>
+                            <a href="booking.html?dest=mars" class="astra-btn w-100">Book Journey</a>
                         </article>
                     </div>
 
@@ -218,7 +219,7 @@
                             <p class="mb-3">
                                 <strong>Duration:</strong> 2 years &bull; <strong>Price:</strong> From $8.7M
                             </p>
-                            <a href="booking.html" class="astra-btn w-100">Book Journey</a>
+                            <a href="booking.html?dest=europa" class="astra-btn w-100">Book Journey</a>
                         </article>
                     </div>
                 </div>
@@ -244,12 +245,13 @@
     <footer class="astra-footer">
         <div class="container">
             <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
-            <p class="small text-secondary mb-0">Built with HTML5, CSS3, Bootstrap 5.3 and jQuery 3.7.1. All missions and spacecraft concepts are fictional.</p>
+            <p class="small text-secondary mb-0">A student project about space travel. All trips are fictional.</p>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/favorites.js"></script>
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
 </body>

@@ -66,3 +66,22 @@ If ASTRA is a nested directory, move its contents to the repository root or conf
 - Demonstrate the About page improvements and each member's contribution.
 
 All spacecraft specifications, destinations and fares are fictional student project content.
+
+## Accounts, saved tours and quiz
+
+Demo accounts and sessions use `astra_users` and `astra_session`. Use sample details and a made-up password: this is browser-only authentication, with no server or password encryption. Reservations are stored in `astra_bookings` and linked to the account that made them (guest bookings use the contact email).
+
+`js/favorites.js` manages `astra_favorites`. Saved tours are shared within this browser, including for guests. The catalog buttons, navigation count and profile list update together. The profile shows the sum of base fares and supports removing one tour or clearing the list.
+
+The latest completed quiz is stored in `astra_quiz_result`, including answers, score, recommendation and completion time. It is restored when About is reopened. Retake starts a new attempt; the previous completed result remains saved until the next submission.
+
+Browser regression check (requires Python, Playwright and locally installed Chrome):
+
+```sh
+python -m pip install playwright
+python -m http.server 8000 --bind 127.0.0.1
+# In another terminal:
+python tests/browser_check.py
+```
+
+The check uses an isolated browser session and covers accounts, booking ownership, storage failures, saved tours, quiz persistence and responsive navigation.

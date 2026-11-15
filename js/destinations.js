@@ -125,9 +125,21 @@ const destinationsData = [
 let activeCategory = "all";
 let searchQuery = "";
 let currentSort = "featured";
+let quickViewOpener = null;
+let quickViewOverflow = "";
 
 $(document).ready(function () {
     filterAndRender();
+    $(document).on("click", ".save-destination-btn", function () {
+        const destination = destinationsData.find(item => item.id === $(this).attr("data-id"));
+        if (destination) AstraFavorites.toggle(destination);
+    });
+    $(document).on("astra:favoritesChange", function () {
+        $(".save-destination-btn").each(function () {
+            const saved = AstraFavorites.has($(this).attr("data-id"));
+            $(this).attr("aria-pressed", String(saved)).text(saved ? "\u2605 Saved" : "\u2605 Save");
+        });
+    });
 
     $("#destinationSearch").on("input", function () {
         searchQuery = $(this).val().trim().toLowerCase();
@@ -178,8 +190,17 @@ $(document).ready(function () {
     });
 
     $(document).on("keydown", function (e) {
+        const $modal = $(".astra-modal-overlay");
+        if ($modal.attr("aria-hidden") !== "false") return;
         if (e.key === "Escape") {
             closeQuickViewModal();
+        }
+        if (e.key === "Tab") {
+            const controls = $modal.find("button, a[href]").filter(":visible").toArray();
+            const index = controls.indexOf(document.activeElement);
+            e.preventDefault();
+            const next = e.shiftKey ? (index <= 0 ? controls.length - 1 : index - 1) : (index + 1) % controls.length;
+            controls[next].focus();
         }
     });
 });
@@ -223,7 +244,7 @@ function renderCards(list) {
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                 </span>
-                <h3>No Cosmic Expeditions Found</h3>
+                <h3>No trips found</h3>
                 <p>We could not find any voyages matching "${escapeHtml(searchQuery)}" in this category.</p>
                 <button type="button" id="resetFiltersBtn" class="astra-btn astra-btn-sm mt-3">Reset All Filters</button>
             </div>
@@ -264,6 +285,7 @@ function renderCards(list) {
                         </div>
                     </div>
 
+                    <button type="button" class="astra-btn-outline astra-btn-sm save-destination-btn mb-3" data-id="${dest.id}" aria-pressed="${AstraFavorites.has(dest.id)}">${AstraFavorites.has(dest.id) ? "\u2605 Saved" : "\u2605 Save"}</button>
                     <div class="d-flex gap-2 mt-auto">
                         <a href="booking.html?dest=${dest.id}" class="astra-btn flex-grow-1 astra-btn-sm">
                             Book Trip
@@ -304,6 +326,12 @@ function formatPrice(num) {
 function openQuickViewModal(id) {
     const dest = destinationsData.find(item => item.id === id);
     if (!dest) return;
+    const $modal = $(".astra-modal-overlay");
+    if ($modal.attr("aria-hidden") !== "false") {
+        quickViewOpener = document.activeElement;
+        quickViewOverflow = document.body.style.overflow;
+    }
+    document.body.style.overflow = "hidden";
 
     $("#modalTitle").text(dest.title);
     $("#modalImage").attr("src", dest.image).attr("alt", dest.title);
@@ -320,11 +348,16 @@ function openQuickViewModal(id) {
     });
 
     $("#modalBookLink").attr("href", `booking.html?dest=${dest.id}`);
-    $(".astra-modal-overlay").css("display", "flex").hide().stop(true, true).fadeIn(250);
+    $modal.stop(true, true).css("display", "flex").hide().attr("aria-hidden", "false").fadeIn(250);
+    $modal.find(".modal-close-btn").trigger("focus");
 }
 
 function closeQuickViewModal() {
-    $(".astra-modal-overlay").stop(true, true).fadeOut(200);
+    const $modal = $(".astra-modal-overlay");
+    if ($modal.attr("aria-hidden") !== "false") return;
+    $modal.attr("aria-hidden", "true").stop(true, true).fadeOut(200);
+    document.body.style.overflow = quickViewOverflow;
+    if (quickViewOpener) quickViewOpener.focus();
 }
 
 function escapeHtml(string) {

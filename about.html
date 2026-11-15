@@ -13,7 +13,7 @@
 
     
     <header class="astra-header">
-        <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
+        <nav class="navbar navbar-expand-xl astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
             <div class="container">
                 <a href="index.html" class="navbar-brand logo">
                     ASTRA <span class="logo-dot"></span>
@@ -34,7 +34,7 @@
 
                 
                 <div class="collapse navbar-collapse" id="mainMenu">
-                    <div class="navbar-nav ms-auto align-items-md-center">
+                    <div class="navbar-nav ms-auto align-items-xl-center">
                         <a class="nav-link" href="index.html">Home</a>
                         <a class="nav-link" href="destinations.html">Destinations</a>
                         <a class="nav-link" href="missions.html">Missions</a>
@@ -97,57 +97,12 @@
         </section>
 
         
-        <section class="astra-section">
-            <div class="container">
-                <span class="hero-badge" style="background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3); color: #34d399;">CRITERION 6 COMPLIANCE</span>
-                <h2>Improvements Since Midterm Defense</h2>
-                <div class="astra-card p-4">
-                    <p class="text-white fw-bold mb-3">Project improvements prepared for the endterm demonstration:</p>
-                    <div class="row g-3">
-                        <div class="col-12 col-md-6">
-                            <div class="p-3 rounded h-100" style="background: rgba(7, 10, 19, 0.6); border: 1px solid rgba(124, 92, 255, 0.2);">
-                                <h3 class="h6 text-info mb-2">1. Burger Menu Visibility Fixed</h3>
-                                <p class="small text-secondary mb-0">
-                                    Resolved dark SVG icon blending into black background by adopting <code class="text-info">data-bs-theme="dark"</code>, explicit neon contrast borders, white-cyan icon stroke, and clear keyboard focus states.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6">
-                            <div class="p-3 rounded h-100" style="background: rgba(7, 10, 19, 0.6); border: 1px solid rgba(124, 92, 255, 0.2);">
-                                <h3 class="h6 text-info mb-2">2. Visual Design System Overhaul</h3>
-                                <p class="small text-secondary mb-0">
-                                    Replaced flat basic styling with an elevated sci-fi theme: deep space gradients, glassmorphism (<code class="text-info">backdrop-filter</code>), smooth hover elevations, glowing status badges, and zero default Bootstrap aesthetics.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6">
-                            <div class="p-3 rounded h-100" style="background: rgba(7, 10, 19, 0.6); border: 1px solid rgba(124, 92, 255, 0.2);">
-                                <h3 class="h6 text-info mb-2">3. Synchronized Page Navigation</h3>
-                                <p class="small text-secondary mb-0">
-                                    Eliminated the bug where all 6 pages highlighted "About". Each page now strictly highlights its own active route with proper <code class="text-info">aria-current="page"</code> attributes.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6">
-                            <div class="p-3 rounded h-100" style="background: rgba(7, 10, 19, 0.6); border: 1px solid rgba(124, 92, 255, 0.2);">
-                                <h3 class="h6 text-info mb-2">4. Zero Console Errors &amp; Full Interactivity</h3>
-                                <p class="small text-secondary mb-0">
-                                    Created <code class="text-info">js/booking.js</code> (fixing 404), implemented DOM manipulation for 8+ destinations, multi-rule form validation, real-time price calculations, and 3 distinct jQuery effects.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
         
         <section class="astra-section">
             <div class="container">
-                <h2>Our Project Team &amp; Equal Contributions</h2>
+                <h2>Our team</h2>
                 <div class="grid grid-3">
                     
                     <article class="astra-card d-flex flex-column">
@@ -155,7 +110,7 @@
                         <h3>Gulyayev Mikhail</h3>
                         <p class="text-info small fw-bold mb-2">Home (index.html) &amp; Destinations (destinations.html)</p>
                         <ul class="small text-secondary ps-3 mb-4 flex-grow-1">
-                            <li>Design system architecture and navbar burger toggler fix</li>
+                            <li>Shared styles and navigation</li>
                             <li>Dynamic DOM-manipulated catalog of 8 destination objects</li>
                             <li>Live search, category filters, and multi-criteria sorting</li>
                             <li>Count and average price calculations</li>
@@ -169,11 +124,11 @@
                         <h3>Abdykhamit Beknur</h3>
                         <p class="text-info small fw-bold mb-2">Missions (missions.html) &amp; Booking (booking.html)</p>
                         <ul class="small text-secondary ps-3 mb-4 flex-grow-1">
-                            <li>Resolved 404 error by building full <code class="text-info">js/booking.js</code></li>
+                            <li>Booking form and reservation history</li>
                             <li>7-field Bootstrap form with regex validation for email and phone</li>
                             <li>Inline error feedback under fields (no alerts) and auto-clearing</li>
                             <li>Real-time dynamic cost calculator with 20% deposit estimate</li>
-                            <li>jQuery Effect: FAQ Accordion with <code class="text-info">.stop()</code> and Back to Top</li>
+                            <li>FAQ accordion and back-to-top button</li>
                         </ul>
                     </article>
 
@@ -184,9 +139,9 @@
                         <p class="text-info small fw-bold mb-2">Technology (technology.html) &amp; About (about.html)</p>
                         <ul class="small text-secondary ps-3 mb-4 flex-grow-1">
                             <li>Interactive spacecraft subsystems explorer (tabs switcher)</li>
-                            <li>jQuery Effect: Technical blueprint modal with <code class="text-info">fadeIn/fadeOut</code></li>
+                            <li>Spacecraft blueprint viewer</li>
                             <li>Interactive Space Readiness Quiz with dynamic score calculation</li>
-                            <li>Changelog documentation of midterm remarks</li>
+                            <li>About page and project documentation</li>
                             <li>Accessibility audit: heading levels, alt tags, and keyboard focus</li>
                         </ul>
                     </article>
@@ -314,7 +269,6 @@
 
                     
                     <div id="quizResultCard" class="quiz-result-card" role="status" aria-live="polite">
-                        <span class="hero-badge" style="background: rgba(56,189,248,0.2); border-color: var(--accent-cyan); color: #ffffff;">YOUR QUIZ RESULT</span>
                         <h3 id="quizRank" class="h3 my-2" style="color: #38bdf8;">Certified Lunar Explorer</h3>
                         <p id="quizScoreValue" class="fw-bold text-white mb-2">19 / 25 pts (76% Readiness)</p>
                         <p id="quizRecommendation" class="text-secondary small mb-4"></p>
@@ -340,7 +294,7 @@
                     <ul class="small text-secondary mb-3 ps-3">
                         <li><strong>CSS Framework:</strong> <a href="https://getbootstrap.com/docs/5.3/" target="_blank" rel="noopener">Bootstrap 5.3</a> (Grid, Utilities, Forms, Components).</li>
                         <li><strong>JavaScript Library:</strong> <a href="https://jquery.com/" target="_blank" rel="noopener">jQuery 3.7.1</a> (DOM event handling, animations, effects).</li>
-                        <li><strong>Photography:</strong> Open-license astronomical imagery provided by NASA / AI-generated picture.</li>
+                        <li><strong>Photography:</strong> NASA imagery and generated illustrations.</li>
                         <li><strong>Original Schematics:</strong> Custom SVG diagrams (<code class="text-info">orion-x.svg</code>, <code class="text-info">lifecore.svg</code>, <code class="text-info">navigate-ai.svg</code>, <code class="text-info">astra-shield.svg</code>) designed for the ASTRA student project.</li>
                         <li><strong>Content:</strong> All spacecraft concepts, expedition itineraries, and mission rates are fictional and prepared for Front End university evaluation.</li>
                     </ul>
@@ -354,13 +308,14 @@
     <footer class="astra-footer">
         <div class="container">
             <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
-            <p class="small text-secondary mb-0">Built with HTML5, CSS3, Bootstrap 5.3 and jQuery 3.7.1.</p>
+            <p class="small text-secondary mb-0">A student project about space travel. All trips are fictional.</p>
         </div>
     </footer>
 
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/favorites.js"></script>
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/quiz.js"></script>

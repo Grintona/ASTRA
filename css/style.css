@@ -1756,3 +1756,21 @@ html[data-theme="light"] .booking-item-card strong.text-white,
 html[data-theme="light"] .booking-item-card span.text-white {
     color: var(--text-primary) !important;
 }
+
+.save-destination-btn[aria-pressed="true"] { color: var(--accent-cyan); border-color: var(--accent-cyan); }
+#navSavedLink { white-space: nowrap; }
+#clearFavoritesBtn:disabled { opacity: .5; cursor: default; }
+
+/* Accessible controls in both themes. */
+.text-secondary { color: var(--text-secondary) !important; }
+.nav-cta-btn[aria-current="page"] { outline: 2px solid var(--accent-cyan); outline-offset: 3px; }
+.form-control::placeholder { color: #a0aec0; opacity: 1; }
+html[data-theme="light"] .form-control::placeholder { color: #52627a; }
+.astra-modal-box { max-height: calc(100dvh - 32px); overflow-y: auto; }
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .navbar-collapse { padding: 16px; margin-top: 12px; background: var(--bg-card); border-radius: 12px; }
+    .navbar-nav .nav-cta-btn { margin-left: 0; text-align: center; }
+}
+@media (max-width: 1199.98px) {
+    .navbar-collapse { max-height: calc(100dvh - 90px); overflow-y: auto; }
+}

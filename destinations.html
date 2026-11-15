@@ -13,7 +13,7 @@
 
     
     <header class="astra-header">
-        <nav class="navbar navbar-expand-md astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
+        <nav class="navbar navbar-expand-xl astra-navbar" data-bs-theme="dark" aria-label="Main navigation">
             <div class="container">
                 <a href="index.html" class="navbar-brand logo">
                     ASTRA <span class="logo-dot"></span>
@@ -34,7 +34,7 @@
 
                 
                 <div class="collapse navbar-collapse" id="mainMenu">
-                    <div class="navbar-nav ms-auto align-items-md-center">
+                    <div class="navbar-nav ms-auto align-items-xl-center">
                         <a class="nav-link" href="index.html">Home</a>
                         <a class="nav-link active" href="destinations.html" aria-current="page">Destinations</a>
                         <a class="nav-link" href="missions.html">Missions</a>
@@ -70,6 +70,7 @@
 
         
         <section class="astra-section pt-0">
+            <h2 class="visually-hidden">Available destinations</h2>
             <div class="container">
 
                 
@@ -155,7 +156,7 @@
     </main>
 
     
-    <div class="astra-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="astra-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
         <div class="astra-modal-box">
             <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
             <div class="row g-3">
@@ -184,13 +185,14 @@
     <footer class="astra-footer">
         <div class="container">
             <p class="mb-2">© 2026 ASTRA Space Travel. University Project — WEB Technologies 1 (Front End).</p>
-            <p class="small text-secondary mb-0">Built with HTML5, CSS3, Bootstrap 5.3 and jQuery 3.7.1.</p>
+            <p class="small text-secondary mb-0">A student project about space travel. All trips are fictional.</p>
         </div>
     </footer>
 
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/favorites.js"></script>
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/destinations.js"></script>
