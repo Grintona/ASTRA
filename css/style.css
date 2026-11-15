@@ -1495,7 +1495,7 @@ html[data-theme="light"] div[style*="background"] strong {
 html[data-theme="light"] .radar-stage {
     background:
         radial-gradient(circle at 50% 50%, rgba(124, 92, 255, 0.1), transparent 62%),
-        rgba(15, 21, 35, 0.82);
+        #0f1523;
     border-color: rgba(124, 92, 255, 0.22);
     color: #f8fafc;
 }
