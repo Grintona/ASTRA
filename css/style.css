@@ -1328,6 +1328,15 @@ html[data-theme="light"] .modal-content {
     color: var(--text-primary);
 }
 
+html[data-theme="light"] .astra-modal-box {
+    background: #ffffff;
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .modal-close-btn:hover {
+    color: var(--text-primary);
+}
+
 html[data-theme="light"] .hero-badge {
     background: rgba(96, 70, 199, 0.1);
     border-color: rgba(96, 70, 199, 0.3);
@@ -1434,6 +1443,11 @@ html[data-theme="light"] .faq-question {
     color: var(--text-primary);
 }
 
+html[data-theme="light"] .summary-list dd,
+html[data-theme="light"] .total-price {
+    color: var(--text-primary);
+}
+
 html[data-theme="light"] .quiz-option-label {
     background: #ffffff;
     color: var(--text-primary);
@@ -1478,8 +1492,7 @@ html[data-theme="light"] div[style*="background"] strong {
     color: var(--text-primary) !important;
 }
 
-html[data-theme="light"] .radar-stage,
-html[data-theme="light"] .radar-panel {
+html[data-theme="light"] .radar-stage {
     background:
         radial-gradient(circle at 50% 50%, rgba(124, 92, 255, 0.1), transparent 62%),
         rgba(15, 21, 35, 0.82);
@@ -1487,21 +1500,33 @@ html[data-theme="light"] .radar-panel {
     color: #f8fafc;
 }
 
+html[data-theme="light"] .radar-panel {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
 html[data-theme="light"] .radar-stage .radar-next,
 html[data-theme="light"] .radar-stage .radar-slider-label,
 html[data-theme="light"] .radar-stage .radar-text,
-html[data-theme="light"] .radar-stage .radar-note,
+html[data-theme="light"] .radar-stage .radar-note {
+    color: #a0aec0;
+}
+
+html[data-theme="light"] .radar-stage .radar-title {
+    color: #f8fafc;
+}
+
 html[data-theme="light"] .radar-panel .radar-text,
 html[data-theme="light"] .radar-panel .radar-label,
 html[data-theme="light"] .radar-panel .radar-empty,
 html[data-theme="light"] .radar-panel .radar-stats dt {
-    color: #a0aec0;
+    color: var(--text-secondary);
 }
 
-html[data-theme="light"] .radar-stage .radar-title,
 html[data-theme="light"] .radar-panel .radar-title,
 html[data-theme="light"] .radar-panel .radar-stats dd {
-    color: #f8fafc;
+    color: var(--text-primary);
 }
 
 html[data-theme="light"] .radar-stage .astra-btn-outline,
