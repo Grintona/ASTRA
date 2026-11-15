@@ -1,5 +1,7 @@
 
 $(document).ready(function () {
+    initThemeToggle();
+
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
     
     $(".navbar-nav .nav-link").each(function () {
@@ -57,6 +59,32 @@ $(document).ready(function () {
 
     initNumberCounters();
 });
+
+function initThemeToggle() {
+    const $toggle = $("#themeToggle");
+    if (!$toggle.length) return;
+
+    const savedTheme = localStorage.getItem("astra-theme") || "dark";
+    applyTheme(savedTheme);
+
+    $toggle.on("click", function () {
+        const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+        applyTheme(nextTheme);
+        localStorage.setItem("astra-theme", nextTheme);
+    });
+}
+
+function applyTheme(theme) {
+    const isLight = theme === "light";
+    document.documentElement.dataset.theme = isLight ? "light" : "dark";
+    $("#themeToggle")
+        .attr({
+            "aria-pressed": isLight ? "true" : "false",
+            "aria-label": isLight ? "Switch to dark theme" : "Switch to light theme",
+            title: isLight ? "Switch to dark theme" : "Switch to light theme"
+        });
+    $(".astra-navbar").attr("data-bs-theme", isLight ? "light" : "dark");
+}
 
 
 function initLaunchCountdown() {

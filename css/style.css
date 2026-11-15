@@ -108,7 +108,7 @@ textarea:focus-visible,
 
 
 .astra-header {
-    background: rgba(7, 10, 19, 0.85);
+    background: var(--bg-deep-space);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border-color);
@@ -120,6 +120,10 @@ textarea:focus-visible,
 
 .astra-navbar {
     padding: 16px 0;
+}
+
+.astra-navbar .navbar-nav {
+    gap: 16px;
 }
 
 .navbar-brand.logo {
@@ -1211,4 +1215,323 @@ textarea:focus-visible,
     margin-left: 8px;
     font-size: 0.85rem;
     white-space: nowrap;
+}
+
+.theme-toggle {
+    align-items: center;
+    background: rgba(15, 21, 35, 0.7);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    color: var(--accent-cyan);
+    cursor: pointer;
+    display: inline-flex;
+    height: 38px;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 0;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    width: 38px;
+}
+
+.theme-toggle:hover {
+    background: rgba(56, 189, 248, 0.12);
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+    transform: translateY(-1px);
+}
+
+.theme-icon {
+    display: block;
+    height: 19px;
+    width: 19px;
+}
+
+.theme-icon-moon {
+    display: none;
+}
+
+html[data-theme="dark"] .theme-icon-sun {
+    display: block;
+}
+
+html[data-theme="dark"] .theme-icon-moon {
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    .theme-toggle {
+        margin: 8px 0 0;
+    }
+}
+
+html[data-theme="light"] {
+    --bg-deep-space: #f3f7fc;
+    --bg-card: rgba(255, 255, 255, 0.94);
+    --bg-card-hover: #ffffff;
+    --bg-surface: #e8eef7;
+    --accent-purple: #6046c7;
+    --accent-purple-hover: #4f38ad;
+    --accent-cyan: #087ea4;
+    --accent-cyan-hover: #066783;
+    --accent-glow: rgba(96, 70, 199, 0.2);
+    --accent-cyan-glow: rgba(8, 126, 164, 0.2);
+    --border-color: rgba(70, 88, 125, 0.25);
+    --border-card-hover: rgba(8, 126, 164, 0.45);
+    --text-primary: #17233b;
+    --text-secondary: #52627a;
+    --text-muted: #6b7890;
+}
+
+html[data-theme="light"] body {
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(96, 70, 199, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(8, 126, 164, 0.08) 0%, transparent 45%),
+        linear-gradient(rgba(243, 247, 252, 0.94), rgba(243, 247, 252, 0.98));
+}
+
+html[data-theme="light"] .astra-header {
+    background: #ffffff;
+}
+
+html[data-theme="light"] .navbar-brand.logo,
+html[data-theme="light"] .navbar-nav .nav-link.active,
+html[data-theme="light"] .navbar-nav .nav-link[aria-current="page"] {
+    color: var(--text-primary) !important;
+}
+
+html[data-theme="light"] .navbar-toggler {
+    background: rgba(232, 238, 247, 0.9) !important;
+}
+
+html[data-theme="light"] .navbar-collapse {
+    background: #ffffff;
+}
+
+html[data-theme="light"] .theme-toggle {
+    background: rgba(232, 238, 247, 0.85);
+    color: var(--accent-purple);
+}
+
+html[data-theme="light"] .theme-icon-sun {
+    display: none;
+}
+
+html[data-theme="light"] .theme-icon-moon {
+    display: block;
+}
+
+html[data-theme="light"] .astra-card,
+html[data-theme="light"] .countdown-widget,
+html[data-theme="light"] .booking-form-card,
+html[data-theme="light"] .modal-content {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .hero-badge {
+    background: rgba(96, 70, 199, 0.1);
+    border-color: rgba(96, 70, 199, 0.3);
+    color: #6046c7 !important;
+}
+
+html[data-theme="light"] .text-white {
+    color: var(--text-primary) !important;
+}
+
+html[data-theme="light"] .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+html[data-theme="light"] .form-label {
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .form-control,
+html[data-theme="light"] .form-select {
+    background-color: #ffffff !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+html[data-theme="light"] .form-control:focus,
+html[data-theme="light"] .form-select:focus {
+    background-color: #ffffff !important;
+    color: var(--text-primary) !important;
+}
+
+html[data-theme="light"] .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+html[data-theme="light"] .filter-pill:hover {
+    background: rgba(8, 126, 164, 0.1);
+    color: var(--accent-cyan);
+}
+
+html[data-theme="light"] .countdown-number {
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .countdown-box,
+html[data-theme="light"] .stat-item {
+    background: #ffffff;
+    border-color: var(--border-color);
+}
+
+html[data-theme="light"] .stat-text {
+    color: var(--text-secondary);
+}
+
+html[data-theme="light"] .filter-pill {
+    background: #ffffff;
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .filter-pill.active,
+html[data-theme="light"] .tech-tab-btn.active {
+    background: var(--accent-purple);
+    border-color: #6046c7;
+    color: #ffffff;
+}
+
+html[data-theme="light"] .catalog-stats {
+    background: #e8eef7;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .status-badge.open {
+    color: #08734f;
+}
+
+html[data-theme="light"] .status-badge.limited {
+    color: #9a5b00;
+}
+
+html[data-theme="light"] .status-badge.planned {
+    color: #066783;
+}
+
+html[data-theme="light"] .status-badge.exclusive {
+    color: #6046c7;
+}
+
+html[data-theme="light"] .tech-tab-btn {
+    background: #ffffff;
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .tech-tab-btn:hover {
+    color: var(--accent-cyan);
+}
+
+html[data-theme="light"] .quiz-step-title {
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .faq-question {
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .quiz-option-label {
+    background: #ffffff;
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .quiz-option-label:hover {
+    color: var(--accent-cyan);
+}
+
+html[data-theme="light"] .quiz-option-label.selected {
+    background: rgba(96, 70, 199, 0.14);
+    color: #40309a;
+}
+
+html[data-theme="light"] .mission-table {
+    --bs-table-color: var(--text-primary) !important;
+    --bs-table-border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+html[data-theme="light"] .mission-table th,
+html[data-theme="light"] .mission-table td {
+    color: var(--text-primary) !important;
+}
+
+html[data-theme="light"] .mission-table thead th {
+    background-color: #e8eef7 !important;
+    color: #066783 !important;
+    border-bottom-color: var(--border-color) !important;
+}
+
+html[data-theme="light"] .table-shell {
+    background: #ffffff;
+}
+
+html[data-theme="light"] div[style*="background"] {
+    background: rgba(255, 255, 255, 0.76) !important;
+}
+
+html[data-theme="light"] div[style*="background"] .text-white,
+html[data-theme="light"] div[style*="background"] strong {
+    color: var(--text-primary) !important;
+}
+
+html[data-theme="light"] .radar-stage,
+html[data-theme="light"] .radar-panel {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(124, 92, 255, 0.1), transparent 62%),
+        rgba(15, 21, 35, 0.82);
+    border-color: rgba(124, 92, 255, 0.22);
+    color: #f8fafc;
+}
+
+html[data-theme="light"] .radar-stage .radar-next,
+html[data-theme="light"] .radar-stage .radar-slider-label,
+html[data-theme="light"] .radar-stage .radar-text,
+html[data-theme="light"] .radar-stage .radar-note,
+html[data-theme="light"] .radar-panel .radar-text,
+html[data-theme="light"] .radar-panel .radar-label,
+html[data-theme="light"] .radar-panel .radar-empty,
+html[data-theme="light"] .radar-panel .radar-stats dt {
+    color: #a0aec0;
+}
+
+html[data-theme="light"] .radar-stage .radar-title,
+html[data-theme="light"] .radar-panel .radar-title,
+html[data-theme="light"] .radar-panel .radar-stats dd {
+    color: #f8fafc;
+}
+
+html[data-theme="light"] .radar-stage .astra-btn-outline,
+html[data-theme="light"] .radar-stage .radar-chip {
+    background: rgba(7, 10, 19, 0.7);
+    border-color: rgba(124, 92, 255, 0.3);
+    color: #a0aec0;
+}
+
+html[data-theme="light"] .radar-stage .astra-btn-outline:hover,
+html[data-theme="light"] .radar-stage .radar-chip:hover {
+    color: #ffffff;
+    border-color: #38bdf8;
+}
+
+html[data-theme="light"] .radar-stage .astra-btn-outline {
+    background: transparent;
+    border-color: #38bdf8;
+    color: #38bdf8;
+}
+
+html[data-theme="light"] .radar-date,
+html[data-theme="light"] .radar-phase {
+    color: #38bdf8;
+}
+
+html[data-theme="light"] .radar-slider {
+    accent-color: #7c5cff;
+}
+
+html[data-theme="light"] .radar-progress > span {
+    background: linear-gradient(90deg, #7c5cff, #38bdf8);
 }
