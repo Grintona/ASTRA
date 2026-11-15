@@ -30,6 +30,15 @@ $(document).ready(function () {
         $("#destination").val(destParam);
     }
 
+    // Pre-fill logged-in passenger information if session exists
+    if (window.AstraAuth) {
+        const session = AstraAuth.getSession();
+        if (session) {
+            if (!$("#fullName").val()) $("#fullName").val(session.fullName);
+            if (!$("#email").val()) $("#email").val(session.email);
+        }
+    }
+
     $form.on("input change", "input, select", function () {
         calculateLiveEstimate();
     });
@@ -200,9 +209,53 @@ function markFieldValid($field) {
 function handleSuccessfulSubmission() {
     const bookingCode = "ASTRA-" + Math.floor(100000 + Math.random() * 900000);
     const passengerName = $("#fullName").val().trim();
+    const contactEmail = $("#email").val().trim();
+    const contactPhone = $("#phone").val().trim();
     const destName = $("#summaryDestination").text();
+    const destKey = $("#destination").val();
+    const departureDate = $("#departure").val();
+    const duration = $("#summaryDuration").text();
+    const passengers = parseInt($("#passengers").val(), 10) || 1;
+    const travelClass = $("#summaryClass").text();
     const total = $("#totalPrice").text();
     const deposit = $("#depositPrice").text();
+
+    const selectedAddons = [];
+    if ($("#addonSpacewalk").is(":checked")) selectedAddons.push("Zero-G Spacewalk (EVA)");
+    if ($("#addonInsurance").is(":checked")) selectedAddons.push("Cosmic Radiation Insurance");
+    if ($("#addonLounge").is(":checked")) selectedAddons.push("VIP Orbital Lounge");
+
+    // Persist reservation into astra_bookings
+    const bookingData = {
+        id: bookingCode,
+        reference: bookingCode,
+        fullName: passengerName,
+        email: contactEmail,
+        phone: contactPhone,
+        destination: destName,
+        destinationKey: destKey,
+        departureDate: departureDate,
+        duration: duration,
+        passengers: passengers,
+        travelClass: travelClass,
+        addons: selectedAddons,
+        totalPrice: total,
+        depositPrice: deposit,
+        createdAt: new Date().toISOString()
+    };
+
+    if (window.AstraAuth) {
+        window.AstraAuth.saveBooking(bookingData);
+    } else {
+        try {
+            const raw = localStorage.getItem("astra_bookings");
+            const list = raw ? JSON.parse(raw) : [];
+            list.unshift(bookingData);
+            localStorage.setItem("astra_bookings", JSON.stringify(list));
+        } catch (e) {
+            console.error("Failed to save booking to localStorage", e);
+        }
+    }
 
     $("#confirmedCode").text(bookingCode);
     $("#confirmedPassenger").text(passengerName);
@@ -219,6 +272,15 @@ function handleSuccessfulSubmission() {
 
     $("#bookingForm")[0].reset();
     $("#bookingForm").find(".is-valid, .is-invalid").removeClass("is-valid is-invalid");
+
+    // Pre-fill user data again if logged in
+    if (window.AstraAuth) {
+        const session = AstraAuth.getSession();
+        if (session) {
+            $("#fullName").val(session.fullName);
+            $("#email").val(session.email);
+        }
+    }
 
     calculateLiveEstimate();
 }

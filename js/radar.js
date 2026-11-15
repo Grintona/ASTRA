@@ -525,7 +525,7 @@
 
     function setPlaying(on) {
         state.playing = on;
-        $play.text(on ? "❚❚ Pause" : "▶ Play").attr("aria-pressed", String(on));
+        $play.text(on ? "Pause" : "Play").attr("aria-pressed", String(on));
     }
 
     function buildSpeedButtons() {

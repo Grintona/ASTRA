@@ -217,7 +217,12 @@ function renderCards(list) {
     if (list.length === 0) {
         const emptyHtml = `
             <div class="empty-state">
-                <span class="empty-state-icon">🔭</span>
+                <span class="empty-state-icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </span>
                 <h3>No Cosmic Expeditions Found</h3>
                 <p>We could not find any voyages matching "${escapeHtml(searchQuery)}" in this category.</p>
                 <button type="button" id="resetFiltersBtn" class="astra-btn astra-btn-sm mt-3">Reset All Filters</button>
@@ -238,7 +243,7 @@ function renderCards(list) {
                     
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <span class="status-badge ${dest.status}">${dest.statusText}</span>
-                        <span class="small text-secondary">⭐ ${dest.rating.toFixed(1)} / 5.0</span>
+                        <span class="small text-secondary"><svg width="12" height="12" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1" style="vertical-align:-1px; margin-right:3px;" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>${dest.rating.toFixed(1)} / 5.0</span>
                     </div>
 
                     <h3 class="h5 mb-2">${dest.title}</h3>
